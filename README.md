@@ -7,25 +7,6 @@ At its core, Dialograph wraps a dynamic graph structure around typed dialogue me
 
 ---
 
-## Why Dialograph?
-
-Modern LLM-based dialogue systems are good at generating responses, but bad at:
-
-* remembering structured information
-* reasoning over long-term preferences
-* planning proactive strategies
-
-Dialograph addresses this gap by:
-
-* modeling dialogue state as a **typed multi-directed graph**
-* supporting **temporal decay and confidence**
-* enabling **explicit, interpretable retrieval**
-* staying **model-agnostic** (works with any LLM)
-
-This library focuses on **representation and reasoning**, not text generation.
-
----
-
 ## Core Concepts
 
 ### Nodes
