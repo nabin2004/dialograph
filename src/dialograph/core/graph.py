@@ -21,7 +21,7 @@ class Dialograph:
         self.time += 1
         return self.time
     
-    def add_node(self, node_id, **attrs):
+    def add_node(self, node_id, **attrs):  #attrs any other attributes like label, value, status
         """
         Add a node to the graph with optional attributes.
         Automatically adds a timestamp of when the node was created.
