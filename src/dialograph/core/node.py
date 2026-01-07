@@ -1,6 +1,6 @@
 import time
 import math
-
+import uuid
 
 class NodeState:
     """
@@ -10,6 +10,7 @@ class NodeState:
     - optional persistence (never decays / never forgotten)
     """
 
+    node_id: str
     node_type: str
     data: dict
     confidence: float
@@ -20,6 +21,7 @@ class NodeState:
 
     def __init__(
         self,
+        node_id: str,
         node_type: str,
         data: dict | None = None,
         confidence: float = 1.0,
@@ -27,6 +29,7 @@ class NodeState:
         last_accessed: float | None = None,
         persistent: bool = False,
     ):
+        self.node_id = node_id or str(uuid.uuid4())
         self.node_type = node_type
         self.data = data or {}
         self.confidence = confidence
@@ -63,6 +66,6 @@ class NodeState:
         self.confidence *= (1.0 - decay_rate_per_second) ** elapsed
         self.last_accessed = now
 
-        # keep forgetting score in sync
+        # keeps forgetting score in sync
         self.forgetting_score = self._compute_forgetting_score()
         return self.confidence

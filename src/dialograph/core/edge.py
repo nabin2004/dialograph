@@ -1,6 +1,7 @@
 from dataclasses import dataclass, field
 import time
 from typing import Dict, Optional, Literal
+import uuid
 
 
 # Type hints for better clarity,forces semantic discipline
@@ -20,9 +21,13 @@ class EdgeState:
     - emotional_charge: temporary emotional weight (-1.0 to +1.0)
     - metadata: optional info like trauma, tags, or context
     """
+    edge_id: str = field(default_factory=lambda: str(uuid.uuid4()))
+    source_node_id: str = field(default="")
+    target_node_id: str = field(default="")
 
-    relation: str                           # e.g., "supports", "elicits", "contradicts"
-    strength: float                         # [0.0, 1.0] long-term importance
+
+    relation: RelationType = "not_named"                        # e.g., "supports", "elicits", "contradicts"
+    strength: float = 0.5                       # [0.0, 1.0] long-term importance
 
     # Time tracking
     created_at: float = field(default_factory=time.time)
@@ -36,12 +41,16 @@ class EdgeState:
     pending_reinforcement: Optional[float] = None
 
     def __post_init__(self):
-        """Validate inputs after initialization."""
+        if not self.source_node_id or not self.target_node_id:
+            raise ValueError("EdgeState requires source_node_id and target_node_id")
+
         if not 0.0 <= self.strength <= 1.0:
             raise ValueError(f"strength must be in [0.0, 1.0], got {self.strength}")
-        if not -1.0 <= self.emotional_charge <= 1.0:
-            raise ValueError(f"emotional_charge must be in [-1.0, 1.0], got {self.emotional_charge}")
 
+        if not -1.0 <= self.emotional_charge <= 1.0:
+            raise ValueError(
+                f"emotional_charge must be in [-1.0, 1.0], got {self.emotional_charge}"
+            )
   
     # Core lifecycle methods
     def touch(self):
