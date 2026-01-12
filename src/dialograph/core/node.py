@@ -69,3 +69,10 @@ class NodeState:
         # keeps forgetting score in sync
         self.forgetting_score = self._compute_forgetting_score()
         return self.confidence
+
+    def __str__(self):
+        return (
+            f"NodeState(node_id={self.node_id}, type={self.node_type}, "
+            f"confidence={self.confidence:.4f}, forgetting_score={self.forgetting_score:.4f}, "
+            f"persistent={self.persistent})"
+        )
