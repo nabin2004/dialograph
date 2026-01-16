@@ -90,20 +90,4 @@ class Dialograph:
             pickle.dump(data, f)
 
     def load(self, path: str):
-        with open(path, "rb") as f:
-        data = pickle.load(f)
-
-        self.nodes = data["nodes"]
-        self.edges = data["edges"]
-        self.time = data["time"]
-
-        self.graph = nx.MultiDiGraph()
-        for node_id in self.nodes:
-            self.graph.add_node(node_id)
-
-        for edge in self.edges.values():
-            self.graph.add_edge(
-                edge.source_node_id,
-                edge.target_node_id,
-                key=edge.edge_id
-            )
+        pass 
