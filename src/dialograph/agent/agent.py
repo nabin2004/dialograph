@@ -56,4 +56,3 @@ class DialographAgent:
 
     def save_nodes(self, conversation) -> str:
         pass
-

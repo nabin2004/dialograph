@@ -2,14 +2,13 @@ import time
 import math
 import uuid
 
-class NodeState:
+class Node:
     """
     Represents a node in the Dialograph with:
     - time-aware confidence decay
     - explicit forgetting score
     - optional persistence (never decays / never forgotten)
     """
-
     node_id: str
     node_type: str
     data: dict
@@ -72,7 +71,7 @@ class NodeState:
 
     def __str__(self):
         return (
-            f"NodeState(node_id={self.node_id}, type={self.node_type}, "
+            f"Node(node_id={self.node_id}, type={self.node_type}, "
             f"confidence={self.confidence:.4f}, forgetting_score={self.forgetting_score:.4f}, "
             f"persistent={self.persistent})"
         )

@@ -11,7 +11,7 @@ EmotionType = Literal["happy", "surprised", "neutral", "sad", "angry", "anxious"
 
 
 @dataclass
-class EdgeState:
+class Edge:
     """
     Represents a directed, time-aware relationship between two nodes in the dialogue graph.
 
@@ -42,7 +42,7 @@ class EdgeState:
 
     def __post_init__(self):
         if not self.source_node_id or not self.target_node_id:
-            raise ValueError("EdgeState requires source_node_id and target_node_id")
+            raise ValueError("Edge requires source_node_id and target_node_id")
 
         if not 0.0 <= self.strength <= 1.0:
             raise ValueError(f"strength must be in [0.0, 1.0], got {self.strength}")
@@ -226,7 +226,7 @@ class EdgeState:
         }
 
     def __repr__(self) -> str:
-        return f"EdgeState(relation='{self.relation}', strength={self.strength:.2f}, importance={self.importance_score():.2f})"
+        return f"Edge(relation='{self.relation}', strength={self.strength:.2f}, importance={self.importance_score():.2f})"
 
 
 
