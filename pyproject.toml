@@ -1,6 +1,6 @@
 [project]
 name = "dialograph"
-version = "0.3.0"
+version = "0.5.1"
 description = "Dialograph is a Python toolkit for building, evolving, and reasoning over temporal dialogue graphs for proactive conversational agents."
 readme = "README.md"
 requires-python = ">=3.11"

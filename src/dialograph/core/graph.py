@@ -1,6 +1,8 @@
 import networkx as nx
 import json
 import pickle
+from dialograph.core.node import Node
+from dialograph.core.edge import Edge
 
 class Dialograph:
     """
@@ -31,10 +33,10 @@ class Dialograph:
         self.nodes[node.node_id] = node
         self.graph.add_node(node.node_id)
 
-    def get_node(self, node_id: str) -> Node:
+    def get_node(self, node_id: str):
         return self.nodes[node_id]
 
-    def add_edge(self, edge: Edge):
+    def add_edge(self, edge):
         if edge.edge_id in self.edges:
             raise ValueError(f"Edge {edge.edge_id} already exists")
         if edge.source_node_id not in self.nodes:
@@ -51,7 +53,7 @@ class Dialograph:
             key=edge.edge_id
         )
 
-    def get_edges(self, src: str, dst: str) -> list[Edge]:
+    def get_edges(self, src: str, dst: str):
         result = []
         if self.graph.has_edge(src, dst):
             for key in self.graph[src][dst]:
@@ -74,10 +76,10 @@ class Dialograph:
                 )
         return g
 
-    def update_node(self, node: Node):
+    def update_node(self, node):
         pass 
 
-    def update_edge(self, edge: Edge):
+    def update_edge(self, edge):
         pass
 
     def save(self, path: str):
