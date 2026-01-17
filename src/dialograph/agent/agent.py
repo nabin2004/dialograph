@@ -1,58 +1,60 @@
-from typing import Any
+from typing import Any, List, Dict
+from pydantic_ai import Agent as PydanticAgent
+from pydantic_ai.models.groq import GroqModel
 
-from langchain_openai import ChatOpenAI
-from langchain_core.prompts import ChatPromptTemplate, SystemMessagePromptTemplate, HumanMessagePromptTemplate, AIMessagePromptTemplate
 
 class Agent:
+    """Base Agent class providing structure and memory placeholders."""
     def __init__(self, args):
         self.args = args
-        self.cost = 0 
-    
-    def next_action(self, conversation) -> str:
-        raise NotImplementedError("Subclasses must implement this method.")
-        
-    def generate_prompt(self, prompt_template: dict[str, Any]) -> ChatPromptTemplate:
-        messages = []
-        messages.append(SystemMessagePromptTemplate.from_template(prompt_template["system"]))
-        if "assistant" in prompt_template:
-            messages.append(AIMessagePromptTemplate.from_template(prompt_template["assistant"]))    
-        if "user" in prompt_template:
-            messages.append(HumanMessagePromptTemplate.from_template(prompt_template["user"]))
-        final_prompt_template = ChatPromptTemplate.from_messages(messages)
-        return final_prompt_template
-        
+        self.cost = 0
 
-class DialographAgent:
+    def next_action(self, conversation: List[Dict[str, str]]) -> str:
+        """Subclasses should implement this to generate the next agent action."""
+        raise NotImplementedError("Subclasses must implement this method.")
+
+
+class DialographAgent(Agent):
     """
-    Main agent class: proactive, curriculum-aware dialogue.
-    Integrates graph memory + temporal dynamics + policy.
-    """    
+    Dialograph agent using pydantic_ai for response generation.
+    Supports graph memory + temporal context placeholders.
+    """
     def __init__(self, args):
+        super().__init__(args)
         self.data_name = args.data_name
         self.api_key = args.api_key
-        self.args = args 
-        self.mode = args.mode 
-        self.activate_top_k = args.activate_top_k
-        self.activated_memory_nodes = []
-        self.recontextualized_guidance = []
-        
-    def next_action(self, conversation) -> str:
-        pass 
+        self.mode = args.mode
+        self.activate_top_k = getattr(args, "activate_top_k", 5)
+        self.activated_memory_nodes: List[str] = []
+        self.recontextualized_guidance: List[str] = []
 
-    def revision(self, conversation) -> str:
-        pass
+        # Initialize pydantic AI model
+        self.model = GroqModel(getattr(args, "model_name", "llama-3.3-70b-versatile"))
+        self.agent = PydanticAgent(self.model, system_prompt=f"You are a proactive agent for {self.data_name}.")
 
-    def extract_from_failure(self, conversation) -> str:
-        pass
+    def next_action(self, conversation: List[Dict[str, str]]) -> str:
+        """
+        Generate next response using pydantic AI agent.
+        Takes the last user message in conversation as input.
+        """
+        last_message = conversation[-1]["content"] if conversation else "Hello"
+        response = self.agent.run_sync(last_message)
+        return response
 
-    def extract_from_success(self, conversation) -> str:
-        pass
+    def revision(self, conversation: List[Dict[str, str]]) -> str:
+        return "Revision placeholder"
 
-    def retrieve_nodes(self, conversation) -> str:
-        pass
+    def extract_from_failure(self, conversation: List[Dict[str, str]]) -> str:
+        return "Extracted lessons from failure placeholder"
 
-    def reinterpretation(self, conversation) -> str:
-        pass
+    def extract_from_success(self, conversation: List[Dict[str, str]]) -> str:
+        return "Extracted lessons from success placeholder"
 
-    def save_nodes(self, conversation) -> str:
-        pass
+    def retrieve_nodes(self, conversation: List[Dict[str, str]]) -> List[str]:
+        return self.activated_memory_nodes
+
+    def reinterpretation(self, conversation: List[Dict[str, str]]) -> str:
+        return "Reinterpretation placeholder"
+
+    def save_nodes(self, conversation: List[Dict[str, str]]) -> None:
+        self.activated_memory_nodes.append("New node placeholder")
