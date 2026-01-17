@@ -35,3 +35,4 @@ test_edge.py
 __pycache__
 .pytest_cache
 .env
+*.html

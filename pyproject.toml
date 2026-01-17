@@ -8,9 +8,11 @@ authors = [
     { name = "author" }
 ]
 dependencies = [
+    "graphviz>=0.21",
     "networkx>=3.6.1",
     "numpy>=2.4.0",
     "pydantic>=2.12.5",
+    "pyvis>=0.3.2",
 ]
 
 [tool.hatch.build.targets.wheel]

@@ -3,5 +3,7 @@
 from .node import Node
 from .edge import Edge
 from .graph import Dialograph
+from .draw import draw
 
-__all__ = ["Node", "Edge", "Dialograph"]
+
+__all__ = ["Node", "Edge", "Dialograph", "draw"]
