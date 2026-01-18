@@ -53,19 +53,54 @@ class DialographAgent(Agent):
         return response
 
     def revision(self, conversation: List[Dict[str, str]]) -> str:
-        return "Revision placeholder"
+        prompt = (
+            "Review the assistant's last response and suggest improvements "
+            "or corrections if any. Be concise.\n\n"
+            f"Conversation:\n{conversation}"
+        )
+        result = self.agent.run_sync(prompt)
+        return result
+
 
     def extract_from_failure(self, conversation: List[Dict[str, str]]) -> str:
-        return "Extracted lessons from failure placeholder"
+        prompt = (
+            "The agent failed in the following conversation. "
+            "Extract a concise lesson that should be remembered to avoid repeating the mistake.\n\n"
+            f"{conversation}"
+        )
+        return self.agent.run_sync(prompt)
 
     def extract_from_success(self, conversation: List[Dict[str, str]]) -> str:
-        return "Extracted lessons from success placeholder"
+        prompt = (
+            "The agent succeeded in the following interaction. "
+            "Extract a concise reusable insight worth remembering.\n\n"
+            f"{conversation}"
+        )
+        return self.agent.run_sync(prompt)
+
 
     def retrieve_nodes(self, conversation: List[Dict[str, str]]) -> List[str]:
         return self.activated_memory_nodes
 
     def reinterpretation(self, conversation: List[Dict[str, str]]) -> str:
-        return "Reinterpretation placeholder"
+        nodes = self.retrieve_nodes(conversation)
+    
+        if not nodes:
+            return ""
 
+        prompt = (
+            "Given the following memory snippets, produce concise guidance "
+            "for how the agent should respond next.\n\n"
+            f"Memory:\n{nodes}\n\nConversation:\n{conversation}"
+        )
+        return self.agent.run_sync(prompt)
+        prompt = (
+            "Given the following memory snippets, produce concise guidance "
+            "for how the agent should respond next.\n\n"
+            f"Memory:\n{nodes}\n\nConversation:\n{conversation}"
+        )
+        return self.agent.run_sync(prompt)
+    
+    
     def save_nodes(self, conversation: List[Dict[str, str]]) -> None:
         self.activated_memory_nodes.append("New node placeholder")
