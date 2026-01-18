@@ -5,8 +5,7 @@ from pydantic_ai.models.groq import GroqModel
 
 class Agent:
     """Base Agent class providing structure and memory placeholders."""
-    def __init__(self, args):
-        self.args = args
+    def __init__(self):
         self.cost = 0
 
     def next_action(self, conversation: List[Dict[str, str]]) -> str:
@@ -19,18 +18,30 @@ class DialographAgent(Agent):
     Dialograph agent using pydantic_ai for response generation.
     Supports graph memory + temporal context placeholders.
     """
-    def __init__(self, args):
-        super().__init__(args)
-        self.data_name = args.data_name
-        self.api_key = args.api_key
-        self.mode = args.mode
-        self.activate_top_k = getattr(args, "activate_top_k", 5)
+    def __init__(
+        self,
+        data_name: str,
+        api_key: str,
+        mode: str,
+        activate_top_k: int = 5,
+        model_name: str = "llama-3.3-70b-versatile",
+    ):
+        super().__init__()
+
+        self.data_name = data_name
+        self.api_key = api_key
+        self.mode = mode
+        self.activate_top_k = activate_top_k
+
         self.activated_memory_nodes: List[str] = []
         self.recontextualized_guidance: List[str] = []
 
         # Initialize pydantic AI model
-        self.model = GroqModel(getattr(args, "model_name", "llama-3.3-70b-versatile"))
-        self.agent = PydanticAgent(self.model, system_prompt=f"You are a proactive agent for {self.data_name}.")
+        self.model = GroqModel(model_name)
+        self.agent = PydanticAgent(
+            self.model,
+            system_prompt=f"You are a proactive agent for {self.data_name}."
+        )
 
     def next_action(self, conversation: List[Dict[str, str]]) -> str:
         """
