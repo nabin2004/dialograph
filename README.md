@@ -164,3 +164,8 @@ MIT License.
 
 If you use Dialograph in academic work, please cite the corresponding paper (coming soon).
 
+```
+- How can an agent use past interactions to proactively adapt its dialog strategies over time, without relying on opaque embedding-only retrieval or heavy ontologies?
+
+- We're not retrieving facts, we're retrieving how to act.
+```

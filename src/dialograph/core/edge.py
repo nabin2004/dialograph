@@ -3,9 +3,6 @@ import time
 from typing import Dict, Optional, Literal
 import uuid
 
-
-# Type hints for better clarity,forces semantic discipline
-# Prevents random strings like entering the graph.
 RelationType = Literal["supports", "contradicts", "elicits", "influences", "depends_on"]
 EmotionType = Literal["happy", "surprised", "neutral", "sad", "angry", "anxious", "excited"]
 
@@ -16,9 +13,10 @@ class Edge:
     Represents a directed, time-aware relationship between two nodes in the dialogue graph.
 
     Each edge has:
+    - source_node_id: ID of the node that initiates the relationship
+    - target_node_id: ID of the node that receives the relationship
     - relation: the type of connection (supports, contradicts, elicits)
-    - strength: how important this connection is (0.0 - 1.0)
-    - emotional_charge: temporary emotional weight (-1.0 to +1.0)
+    - confidence: how important this connection is (0.0 - 1.0)
     - metadata: optional info like trauma, tags, or context
     """
     edge_id: str = field(default_factory=lambda: str(uuid.uuid4()))
@@ -27,59 +25,47 @@ class Edge:
 
 
     relation: RelationType = "not_named"                        # e.g., "supports", "elicits", "contradicts"
-    strength: float = 0.5                       # [0.0, 1.0] long-term importance
+    confidence: float = 0.5                       # [0.0, 1.0] long-term importance
 
     # Time tracking
     created_at: float = field(default_factory=time.time)
     last_used: float = field(default_factory=time.time)
-
-    # Extra context
     metadata: Dict = field(default_factory=dict)
 
-    # Internal state
-    emotional_charge: float = 0.0           # [-1.0, +1.0]
+    # emotional_charge: float = 0.0           # [-1.0, +1.0]
     pending_reinforcement: Optional[float] = None
 
     def __post_init__(self):
         if not self.source_node_id or not self.target_node_id:
             raise ValueError("Edge requires source_node_id and target_node_id")
-
-        if not 0.0 <= self.strength <= 1.0:
-            raise ValueError(f"strength must be in [0.0, 1.0], got {self.strength}")
-
-        if not -1.0 <= self.emotional_charge <= 1.0:
-            raise ValueError(
-                f"emotional_charge must be in [-1.0, 1.0], got {self.emotional_charge}"
-            )
   
-    # Core lifecycle methods
     def touch(self):
         """Mark edge as recently used."""
         self.last_used = time.time()
 
-    def decay(self, base_rate: float = 0.01, time_step: Optional[float] = None):
+
+    def confidence_decay(self, decay_rate_per_second: float = 0.0001) -> float:
         """
-        Gradually reduce strength due to inactivity.
-        
+        Time-aware exponential confidence decay.
+
         Args:
-            base_rate: Base decay rate per time unit
-            time_step: Optional manual time step (for testing/simulation)
-            
-        - Important edges fade slower
-        - Unused/weak edges fade faster
+            decay_rate_per_second (float): fraction of confidence lost per second
+
+        Returns:
+            float: Updated confidence
         """
-        if time_step is None:
-            elapsed = time.time() - self.last_used
-        else:
-            elapsed = time_step
-            
-        # Important memories resist decay more
-        importance_factor = max(0.3, self.strength)
-        decay_amount = base_rate * elapsed * (1.0 - importance_factor)
-        self.strength = max(0.0, self.strength - decay_amount)
-        
-        # Also decay emotional charge
-        self.cool_down(rate=0.05 * elapsed)
+        if self.persistent:
+            return self.confidence
+
+        now = time.time()
+        elapsed = now - self.last_accessed
+
+        self.confidence *= (1.0 - decay_rate_per_second) ** elapsed
+        self.last_accessed = now
+
+        return self.confidence
+
+
 
     # Learning & reinforcement
     def schedule_reinforcement(self, amount: float):
