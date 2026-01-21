@@ -4,6 +4,8 @@ Tests for visualization functionality (draw and draw_live).
 
 import pytest
 import time
+import tempfile
+import os
 from pathlib import Path
 from dialograph import Node, Edge, Dialograph, draw, draw_live
 
@@ -285,7 +287,6 @@ class TestVisualizationAPIStability:
         graph = create_sample_graph()
         
         # Old-style usage with filename
-        import tempfile
         with tempfile.NamedTemporaryFile(mode='w', suffix='.html', delete=False) as f:
             temp_path = f.name
         

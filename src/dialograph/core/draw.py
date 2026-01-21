@@ -255,21 +255,26 @@ def draw_live(
         physics=True,  # Enable physics for interactive mode
     )
 
-    # Create temporary file to serve
+    # Create temporary directory for serving (will be cleaned up on shutdown)
     temp_dir = tempfile.mkdtemp(prefix="dialograph_")
-    html_path = Path(temp_dir) / "visualization.html"
-    html_path.write_text(html_content)
 
-    # Find a free port if port=0
-    if port == 0:
-        with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
-            s.bind((host, 0))
-            port = s.getsockname()[1]
+    # Create a socket and bind to find a free port
+    # This approach reduces (but doesn't eliminate) the race condition
+    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    try:
+        if port == 0:
+            sock.bind((host, 0))
+            port = sock.getsockname()[1]
+        sock.close()
+    except OSError:
+        sock.close()
+        raise
 
     # Create HTTP server
     class QuietHandler(http.server.SimpleHTTPRequestHandler):
-        def log_message(self, format, *args):
-            pass  # Suppress server logs
+        def log_message(self, msg_format, *args):
+            # Suppress server logs (renamed from 'format' to avoid shadowing builtin)
+            pass
 
         def do_GET(self):
             if self.path == "/" or self.path == "/visualization.html":
@@ -280,7 +285,24 @@ def draw_live(
             else:
                 self.send_error(404)
 
-    server = socketserver.TCPServer((host, port), QuietHandler)
+    # Try to create server with retry logic for port conflicts
+    max_retries = 3
+    for attempt in range(max_retries):
+        try:
+            server = socketserver.TCPServer((host, port), QuietHandler)
+            break
+        except OSError as e:
+            if attempt < max_retries - 1 and port != 0:
+                # If specific port is requested and fails, don't retry
+                raise
+            elif attempt < max_retries - 1:
+                # Auto-assigned port failed, try again
+                with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+                    s.bind((host, 0))
+                    port = s.getsockname()[1]
+            else:
+                raise
+
     server_url = f"http://{host}:{port}/"
 
     # Start server in background thread
@@ -316,6 +338,14 @@ class LiveVisualizationServer:
             self.server.shutdown()
             self.server.server_close()
             self._running = False
+            
+            # Clean up temporary directory
+            import shutil
+            try:
+                shutil.rmtree(self.temp_dir, ignore_errors=True)
+            except Exception:
+                pass  # Ignore cleanup errors
+            
             print(f"[Dialograph] Live visualization server stopped.")
 
     def is_running(self) -> bool:
