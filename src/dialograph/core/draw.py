@@ -291,7 +291,7 @@ def draw_live(
         try:
             server = socketserver.TCPServer((host, port), QuietHandler)
             break
-        except OSError as e:
+        except OSError:
             if attempt < max_retries - 1 and port != 0:
                 # If specific port is requested and fails, don't retry
                 raise
