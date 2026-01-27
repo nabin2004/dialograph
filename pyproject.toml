@@ -9,6 +9,8 @@ authors = [
 ]
 dependencies = [
     "graphviz>=0.21",
+    "langchain>=1.2.7",
+    "langchain-groq>=1.1.1",
     "networkx>=3.6.1",
     "numpy>=2.4.0",
     "pydantic>=2.12.5",
