@@ -1,86 +1,121 @@
 import time
 import math
 import uuid
+from typing import Optional
+
 
 class Node:
     """
-    Represents a node in the Dialograph with:
-    Attributes:
-        node_id (str): Unique identifier for the node.
-        node_type (str): Type/category of the node.
-        data (dict): Content or information stored in the node.
-        confidence (float): Confidence score of the node's relevance/usefulness.
-        created_at (float): Timestamp when the node was created.
-        last_accessed (float): Timestamp when the node was last accessed.
-        persistent (bool): Whether the node is persistent (not subject to forgetting).
+    Represents a node in the Dialograph.
 
-    Methods:
-        confidence_decay(decay_rate_per_second: float) -> float:
-            Applies time-aware exponential decay to the node's confidence score.
+    Conceptual separation:
+    - confidence: epistemic reliability (does NOT decay with time)
+    - availability: memory accessibility (Ebbinghaus forgetting curve)
+    - memory_strength: controls forgetting speed, grows with reinforcement
     """
-    node_id: str
-    node_type: str
-    data: dict
-    confidence: float
-    # forgetting_score: float
-    created_at: float
-    last_accessed: float
-    persistent: bool
 
     def __init__(
         self,
-        node_id: str,
+        node_id: Optional[str],
         node_type: str,
-        data: dict | None = None,
+        data: Optional[dict] = None,
         confidence: float = 1.0,
-        created_at: float | None = None,
-        last_accessed: float | None = None,
+        created_at: Optional[float] = None,
+        last_accessed: Optional[float] = None,
         persistent: bool = False,
+        memory_strength: float = 3600.0,  # baseline: ~1 hour
     ):
         self.node_id = node_id or str(uuid.uuid4())
         self.node_type = node_type
         self.data = data or {}
-        self.confidence = confidence
+
+        # Epistemic belief strength (does NOT decay with time)
+        self.confidence = max(0.0, min(1.0, confidence))
+
+        # Time tracking
         self.created_at = created_at or time.time()
-        self.last_accessed = last_accessed or time.time()
+        self.last_accessed = last_accessed or self.created_at
+
+        # Forgetting control
+        self.memory_strength = max(memory_strength, 1.0)
         self.persistent = persistent
 
+        # Optional graph helpers
         self.pre_requisites: set[str] = set()
         self.metadata: dict = {}
 
-    # def _compute_forgetting_score(self) -> float:
-    #     """Internal helper to compute forgetting score."""
-    #     if self.persistent:
-    #         return math.inf
-    #     confidence_clamped = max(0.0, min(1.0, self.confidence))
-    #     return 1.0 - confidence_clamped
+    # ------------------------------------------------------------------
+    # Ebbinghaus forgetting curve
+    # ------------------------------------------------------------------
 
-    def confidence_decay(self, decay_rate_per_second: float = 0.0001) -> float:
+    def availability(self, now: Optional[float] = None) -> float:
         """
-        Time-aware exponential confidence decay.
+        Memory availability based on Ebbinghaus forgetting curve.
 
-        Args:
-            decay_rate_per_second (float): fraction of confidence lost per second
+        retention(t) = exp(-t / S)
 
-        Returns:
-            float: Updated confidence
+        where:
+        - t = time since last access
+        - S = memory_strength
         """
         if self.persistent:
-            return self.confidence
+            return 1.0
 
+        now = now or time.time()
+        elapsed = max(0.0, now - self.last_accessed)
+
+        S = max(self.memory_strength, 1e-6)
+        return math.exp(-elapsed / S)
+
+    # ------------------------------------------------------------------
+    # Reinforcement / spaced repetition
+    # ------------------------------------------------------------------
+
+    def reinforce(self, amount: float = 0.2):
+        """
+        Reinforce memory via spaced repetition.
+
+        Effects:
+        - resets forgetting timer
+        - increases memory_strength (slower future forgetting)
+        - slightly boosts confidence (bounded)
+        """
         now = time.time()
-        elapsed = now - self.last_accessed
-
-        self.confidence *= (1.0 - decay_rate_per_second) ** elapsed
         self.last_accessed = now
 
-        # keeps forgetting score in sync
-        # self.forgetting_score = self._compute_forgetting_score()
-        return self.confidence
+        # Sublinear growth of memory strength
+        growth = max(0.0, amount)
+        self.memory_strength *= (1.0 + growth)
 
-    def __str__(self):
+        # Hard cap to prevent immortal memories (~1 week)
+        self.memory_strength = min(self.memory_strength, 7 * 24 * 3600)
+
+        # Optional small confidence recovery
+        self.confidence = min(1.0, self.confidence + 0.05)
+
+    # ------------------------------------------------------------------
+    # Retrieval helper
+    # ------------------------------------------------------------------
+
+    def retrieval_score(self, now: Optional[float] = None) -> float:
+        """
+        Score used during retrieval:
+        belief reliability × memory availability
+        """
+        return self.confidence * self.availability(now)
+
+    # ------------------------------------------------------------------
+    # Debug / display
+    # ------------------------------------------------------------------
+
+    def __repr__(self) -> str:
         return (
-            f"Node(node_id={self.node_id}, type={self.node_type}, "
-            f"confidence={self.confidence:.4f}, "
-            f"persistent={self.persistent})"
+            f"Node("
+            f"id={self.node_id}, "
+            f"type={self.node_type}, "
+            f"confidence={self.confidence:.3f}, "
+            f"availability={self.availability():.3f}, "
+            f"memory_strength={self.memory_strength:.1f}, "
+            f"persistent={self.persistent}"
+            f")"
         )

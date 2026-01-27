@@ -169,3 +169,9 @@ If you use Dialograph in academic work, please cite the corresponding paper (com
 
 - We're not retrieving facts, we're retrieving how to act.
 ```
+2. Scoring functions
+1. Graph serialization (save/load)
+3. Retrieval: 
+    1. Simple neighbor retrieval
+    2. Smart path-based retrieval
+    3. Context-aware retrieval
