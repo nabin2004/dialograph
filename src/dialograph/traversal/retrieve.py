@@ -3,29 +3,32 @@ from typing import List, Optional
 
 
 def retrieve_neighbors(
-    graph: nx.MultiDiGraph,
-    node_id: str,
-    k: int = 3,
-    top_k: int = 5
-) -> List[str]:
-    """
-    Retrieve and rank k-hop neighbors from the graph based on relevance_score.
-    """
-    if node_id is None:
-        return []
+    graph,
+    source_node_id: str,
+    now: float,
+    top_k: int = 5,
+    context_match_fn=None,
+):
+    scored = []
 
-    # Get all nodes within k hops
-    neighbors = nx.single_source_shortest_path_length(graph, node_id, cutoff=k)
-    neighbors.pop(node_id, None)  # remove self
+    for edge in graph.out_edges(source_node_id):
+        neighbor = graph.get_node(edge.target_node_id)
 
-    # Rank neighbors by relevance_score (default 0)
-    ranked = sorted(
-        neighbors.keys(),
-        key=lambda n: graph.nodes[n].get("relevance_score", 0),
-        reverse=True
-    )
+        context_match = (
+            context_match_fn(neighbor) if context_match_fn else 1.0
+        )
 
-    return ranked[:top_k]
+        score = score_neighbor(
+            neighbor,
+            edge,
+            now,
+            context_match,
+        )
+
+        scored.append((score, neighbor, edge))
+
+    scored.sort(key=lambda x: x[0], reverse=True)
+    return scored[:top_k]
 
 
 def retrieve_subgraph(
@@ -63,38 +66,3 @@ def retrieve_path(
         return paths
     except nx.NetworkXNoPath:
         return []
-
-
-def retrieve_strategies(
-    graph: nx.MultiDiGraph,
-    activated_nodes: List[str],
-    conversation: Optional[List[dict]] = None,
-    top_k: int = 3
-) -> List[str]:
-    """
-    Retrieve memory strategies (nodes) to guide next actions.
-    Strategy nodes are ranked by recency and relevance.
-    """
-    if not activated_nodes:
-        return []
-
-    # prioritize nodes that match keywords in the last user message
-    keywords = set()
-    if conversation:
-        last_msg = conversation[-1]["content"] if conversation else ""
-        keywords = set(last_msg.lower().split())
-
-    scored_nodes = []
-    for node in activated_nodes:
-        node_data = graph.nodes.get(node, {})
-        score = node_data.get("relevance_score", 0)
-        # small boost if keyword appears in node label
-        label = node_data.get("label", "").lower()
-        if any(word in label for word in keywords):
-            score += 1
-        scored_nodes.append((node, score))
-
-    # Rank nodes by score descending
-    scored_nodes.sort(key=lambda x: x[1], reverse=True)
-
-    return [node for node, _ in scored_nodes[:top_k]]
