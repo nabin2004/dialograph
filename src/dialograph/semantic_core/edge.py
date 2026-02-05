@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 
 @dataclass(frozen=True)
-class Edge:
+class SemanticEdge:
     source: str 
     target: str 
     relation_type: str 
