@@ -1,4 +1,7 @@
 from dialograph import DialographAgent
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Step 1: create the agent
 agent = DialographAgent(
