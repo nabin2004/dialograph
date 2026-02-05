@@ -5,6 +5,7 @@ from typing import Dict, List, Optional
 
 from .edge import SemanticEdge
 from .node import SemanticNode
+from ..temporal import TemporalNodeState
 
 class Dialograph:
     def __init__(self):
