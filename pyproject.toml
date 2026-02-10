@@ -11,11 +11,14 @@ dependencies = [
     "graphviz>=0.21",
     "langchain>=1.2.7",
     "langchain-groq>=1.1.1",
+    "matplotlib>=3.10.8",
     "networkx>=3.6.1",
     "numpy>=2.4.0",
+    "pandas>=3.0.0",
     "pydantic>=2.12.5",
     "pydantic-ai>=1.44.0",
     "pyvis>=0.3.2",
+    "seaborn>=0.13.2",
 ]
 
 [tool.hatch.build.targets.wheel]

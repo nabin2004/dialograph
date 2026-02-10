@@ -1,0 +1,17 @@
+{
+  "turns": 12,
+  "mean_confidence": 0.5130833333333333,
+  "mean_retention": 0.14208333333333334,
+  "mean_memory_strength": 1.8443333333333334,
+  "advance_rate": 0.0,
+  "misconception_rate": 0.5,
+  "policy_activation_rate": 1.0,
+  "unique_nodes_visited": 1,
+  "average_activation": 6.5,
+  "policy_usage": {
+    "Fragile Knowledge": 5,
+    "Forgetting / Spaced Reactivation": 1,
+    "Persistent Misconception": 5,
+    "Guessing / Low Engagement": 1
+  }
+}

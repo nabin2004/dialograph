@@ -1,0 +1,122 @@
+[
+  {
+    "turn": 0,
+    "node": "photosynthesis",
+    "correct": false,
+    "confidence": 0.4,
+    "retention": 1.0,
+    "memory_strength": 1.35,
+    "policy": null,
+    "action": "advance"
+  },
+  {
+    "turn": 1,
+    "node": "light_reactions",
+    "correct": false,
+    "confidence": 0.4,
+    "retention": 0.513,
+    "memory_strength": 1.35,
+    "policy": null,
+    "action": "advance"
+  },
+  {
+    "turn": 2,
+    "node": "light_reactions",
+    "correct": false,
+    "confidence": 0.4,
+    "retention": 0.477,
+    "memory_strength": 1.215,
+    "policy": null,
+    "action": "advance"
+  },
+  {
+    "turn": 3,
+    "node": "light_reactions",
+    "correct": false,
+    "confidence": 0.4,
+    "retention": 0.439,
+    "memory_strength": 1.094,
+    "policy": null,
+    "action": "advance"
+  },
+  {
+    "turn": 4,
+    "node": "light_reactions",
+    "correct": false,
+    "confidence": 0.4,
+    "retention": 0.401,
+    "memory_strength": 0.984,
+    "policy": null,
+    "action": "advance"
+  },
+  {
+    "turn": 5,
+    "node": "light_reactions",
+    "correct": false,
+    "confidence": 0.4,
+    "retention": 0.362,
+    "memory_strength": 0.886,
+    "policy": null,
+    "action": "advance"
+  },
+  {
+    "turn": 6,
+    "node": "light_reactions",
+    "correct": false,
+    "confidence": 0.4,
+    "retention": 0.323,
+    "memory_strength": 0.797,
+    "policy": null,
+    "action": "advance"
+  },
+  {
+    "turn": 7,
+    "node": "light_reactions",
+    "correct": false,
+    "confidence": 0.4,
+    "retention": 0.285,
+    "memory_strength": 0.717,
+    "policy": null,
+    "action": "advance"
+  },
+  {
+    "turn": 8,
+    "node": "light_reactions",
+    "correct": false,
+    "confidence": 0.4,
+    "retention": 0.248,
+    "memory_strength": 0.646,
+    "policy": null,
+    "action": "advance"
+  },
+  {
+    "turn": 9,
+    "node": "light_reactions",
+    "correct": false,
+    "confidence": 0.4,
+    "retention": 0.213,
+    "memory_strength": 0.581,
+    "policy": null,
+    "action": "advance"
+  },
+  {
+    "turn": 10,
+    "node": "light_reactions",
+    "correct": false,
+    "confidence": 0.4,
+    "retention": 0.179,
+    "memory_strength": 0.523,
+    "policy": null,
+    "action": "advance"
+  },
+  {
+    "turn": 11,
+    "node": "light_reactions",
+    "correct": false,
+    "confidence": 0.4,
+    "retention": 0.148,
+    "memory_strength": 0.5,
+    "policy": null,
+    "action": "advance"
+  }
+]

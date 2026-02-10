@@ -1,0 +1,47 @@
+[
+  {
+    "turns": 12,
+    "mean_confidence": 0.3,
+    "mean_retention": 0.572,
+    "mean_memory_strength": 1.576,
+    "advance_rate": 0.0,
+    "misconception_rate": 0.667,
+    "run": 0
+  },
+  {
+    "turns": 12,
+    "mean_confidence": 0.3,
+    "mean_retention": 0.572,
+    "mean_memory_strength": 1.576,
+    "advance_rate": 0.0,
+    "misconception_rate": 0.667,
+    "run": 1
+  },
+  {
+    "turns": 12,
+    "mean_confidence": 0.3,
+    "mean_retention": 0.572,
+    "mean_memory_strength": 1.576,
+    "advance_rate": 0.0,
+    "misconception_rate": 0.667,
+    "run": 2
+  },
+  {
+    "turns": 12,
+    "mean_confidence": 0.3,
+    "mean_retention": 0.572,
+    "mean_memory_strength": 1.576,
+    "advance_rate": 0.0,
+    "misconception_rate": 0.667,
+    "run": 3
+  },
+  {
+    "turns": 12,
+    "mean_confidence": 0.3,
+    "mean_retention": 0.572,
+    "mean_memory_strength": 1.576,
+    "advance_rate": 0.0,
+    "misconception_rate": 0.667,
+    "run": 4
+  }
+]

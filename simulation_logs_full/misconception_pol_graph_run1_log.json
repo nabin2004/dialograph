@@ -1,0 +1,230 @@
+[
+  {
+    "turn": 0,
+    "node": "photosynthesis",
+    "learner_utterance": "Photosynthesis converts light energy into chemical energy happens because plants absorb sugar from soil.",
+    "learner_correct": false,
+    "learner_explanation": "confident-but-wrong",
+    "activated_nodes": [
+      "photosynthesis"
+    ],
+    "policies_on": true,
+    "graphs_on": true,
+    "policy": "Productive Struggle",
+    "action": "give_hint",
+    "tutor_prompt": "Learner said:\nPhotosynthesis converts light energy into chemical energy happens because plants absorb sugar from soil.\n\nCorrect: False\nExplanation type: confident-but-wrong\nActivated nodes: ['photosynthesis']\nPolicy: Productive Struggle\nAction: give_hint\n\nRespond as a tutor.",
+    "tutor_response": "Let's take a closer look at photosynthesis. You mentioned it converts light energy into chemical energy and that plants absorb sugar from the soil. However, that's not the main reason photosynthesis happens.\n\nCan you think of what actually drives photosynthesis?",
+    "confidence": 0.4,
+    "retention": 1.0,
+    "memory_strength": 1.35
+  },
+  {
+    "turn": 1,
+    "node": "photosynthesis",
+    "learner_utterance": "Photosynthesis converts light energy into chemical energy happens because plants absorb sugar from soil.",
+    "learner_correct": false,
+    "learner_explanation": "confident-but-wrong",
+    "activated_nodes": [
+      "photosynthesis"
+    ],
+    "policies_on": true,
+    "graphs_on": true,
+    "policy": "Productive Struggle",
+    "action": "give_hint",
+    "tutor_prompt": "Learner said:\nPhotosynthesis converts light energy into chemical energy happens because plants absorb sugar from soil.\n\nCorrect: False\nExplanation type: confident-but-wrong\nActivated nodes: ['photosynthesis']\nPolicy: Productive Struggle\nAction: give_hint\n\nRespond as a tutor.",
+    "tutor_response": "I see what you're thinking, but unfortunately, it's not entirely correct. Photosynthesis is the process by which plants convert light energy into chemical energy, and it actually involves absorbing carbon dioxide and water from the environment, not sugar from the soil. Sugar is indeed produced during photosynthesis, but it's not absorbed from the soil, rather it's synthesized from the carbon dioxide and water.\n\nLet's explore this further. Can you think of what the key inputs are for photosynthesis?",
+    "confidence": 0.4,
+    "retention": 0.477,
+    "memory_strength": 1.22
+  },
+  {
+    "turn": 2,
+    "node": "photosynthesis",
+    "learner_utterance": "Photosynthesis converts light energy into chemical energy happens because plants absorb sugar from soil.",
+    "learner_correct": false,
+    "learner_explanation": "confident-but-wrong",
+    "activated_nodes": [
+      "photosynthesis"
+    ],
+    "policies_on": true,
+    "graphs_on": true,
+    "policy": "Productive Struggle",
+    "action": "give_hint",
+    "tutor_prompt": "Learner said:\nPhotosynthesis converts light energy into chemical energy happens because plants absorb sugar from soil.\n\nCorrect: False\nExplanation type: confident-but-wrong\nActivated nodes: ['photosynthesis']\nPolicy: Productive Struggle\nAction: give_hint\n\nRespond as a tutor.",
+    "tutor_response": "Photosynthesis actually involves plants absorbing carbon dioxide and water from the air and soil. The energy from sunlight is then used to convert these substances into glucose (a type of sugar) and oxygen. So, it's not that plants absorb sugar from the soil, but rather they produce a type of sugar as a result of photosynthesis.\n\nLet's break it down further: what do you think plants need to make glucose during photosynthesis?",
+    "confidence": 0.4,
+    "retention": 0.439,
+    "memory_strength": 1.09
+  },
+  {
+    "turn": 3,
+    "node": "photosynthesis",
+    "learner_utterance": "Photosynthesis converts light energy into chemical energy happens because plants absorb sugar from soil.",
+    "learner_correct": false,
+    "learner_explanation": "confident-but-wrong",
+    "activated_nodes": [
+      "photosynthesis"
+    ],
+    "policies_on": true,
+    "graphs_on": true,
+    "policy": "Persistent Misconception",
+    "action": "restructure",
+    "tutor_prompt": "Learner said:\nPhotosynthesis converts light energy into chemical energy happens because plants absorb sugar from soil.\n\nCorrect: False\nExplanation type: confident-but-wrong\nActivated nodes: ['photosynthesis']\nPolicy: Persistent Misconception\nAction: restructure\n\nRespond as a tutor.",
+    "tutor_response": "I see what you're thinking, but that's not quite right. Photosynthesis converts light energy into chemical energy mainly because plants absorb carbon dioxide from the air and water from the soil, not sugar. This process involves chlorophyll, which is a green pigment found in plant cells. \n\nLet me rephrase: Photosynthesis uses sunlight, carbon dioxide, and water to produce oxygen and glucose (a type of sugar). So, while plants do produce sugar through photosynthesis, they don't absorb it from the soil. Does that make sense?",
+    "confidence": 0.4,
+    "retention": 0.401,
+    "memory_strength": 0.98
+  },
+  {
+    "turn": 4,
+    "node": "photosynthesis",
+    "learner_utterance": "Photosynthesis converts light energy into chemical energy happens because plants absorb sugar from soil.",
+    "learner_correct": false,
+    "learner_explanation": "confident-but-wrong",
+    "activated_nodes": [
+      "photosynthesis"
+    ],
+    "policies_on": true,
+    "graphs_on": true,
+    "policy": "Persistent Misconception",
+    "action": "restructure",
+    "tutor_prompt": "Learner said:\nPhotosynthesis converts light energy into chemical energy happens because plants absorb sugar from soil.\n\nCorrect: False\nExplanation type: confident-but-wrong\nActivated nodes: ['photosynthesis']\nPolicy: Persistent Misconception\nAction: restructure\n\nRespond as a tutor.",
+    "tutor_response": "I think there's a misunderstanding here. Photosynthesis actually involves plants absorbing water and carbon dioxide from the soil and air, not sugar. The process converts light energy into chemical energy in the form of glucose (a type of sugar), but it's produced within the plant cells, not absorbed from the soil.\n\nLet me break it down:\n\n- Plants absorb water and carbon dioxide from the soil and air.\n- They use energy from sunlight to convert these substances into glucose and oxygen.\n- Glucose is a type of sugar that serves as energy for the plant.\n- Oxygen is released into the atmosphere as a byproduct.\n\nSo, while glucose is indeed a sugar, it's produced through photosynthesis, not absorbed from the soil.",
+    "confidence": 0.4,
+    "retention": 0.362,
+    "memory_strength": 0.89
+  },
+  {
+    "turn": 5,
+    "node": "photosynthesis",
+    "learner_utterance": "Photosynthesis converts light energy into chemical energy happens because plants absorb sugar from soil.",
+    "learner_correct": false,
+    "learner_explanation": "confident-but-wrong",
+    "activated_nodes": [
+      "photosynthesis"
+    ],
+    "policies_on": true,
+    "graphs_on": true,
+    "policy": "Persistent Misconception",
+    "action": "restructure",
+    "tutor_prompt": "Learner said:\nPhotosynthesis converts light energy into chemical energy happens because plants absorb sugar from soil.\n\nCorrect: False\nExplanation type: confident-but-wrong\nActivated nodes: ['photosynthesis']\nPolicy: Persistent Misconception\nAction: restructure\n\nRespond as a tutor.",
+    "tutor_response": "I see where you're going with that, but unfortunately, it's not quite correct. Photosynthesis is the process by which plants convert light energy from the sun into chemical energy in the form of glucose (a type of sugar). However, the glucose is produced by the plant itself through the process of photosynthesis, not by absorbing it from the soil.\n\nHere's a more accurate way to think about it: plants absorb carbon dioxide and water from the soil and air, and then use light energy from the sun to convert these into glucose and oxygen through photosynthesis.",
+    "confidence": 0.4,
+    "retention": 0.323,
+    "memory_strength": 0.8
+  },
+  {
+    "turn": 6,
+    "node": "photosynthesis",
+    "learner_utterance": "Photosynthesis converts light energy into chemical energy happens because plants absorb sugar from soil.",
+    "learner_correct": false,
+    "learner_explanation": "confident-but-wrong",
+    "activated_nodes": [
+      "photosynthesis"
+    ],
+    "policies_on": true,
+    "graphs_on": true,
+    "policy": "Persistent Misconception",
+    "action": "restructure",
+    "tutor_prompt": "Learner said:\nPhotosynthesis converts light energy into chemical energy happens because plants absorb sugar from soil.\n\nCorrect: False\nExplanation type: confident-but-wrong\nActivated nodes: ['photosynthesis']\nPolicy: Persistent Misconception\nAction: restructure\n\nRespond as a tutor.",
+    "tutor_response": "I think there's a common misconception here. While plants do absorb nutrients from the soil, the correct reason photosynthesis happens is because plants absorb carbon dioxide from the air and release oxygen as a byproduct, using light energy from the sun to convert it into chemical energy in the form of glucose (a type of sugar). This glucose is produced mainly in the leaves, which are the primary sites of photosynthesis.",
+    "confidence": 0.4,
+    "retention": 0.285,
+    "memory_strength": 0.72
+  },
+  {
+    "turn": 7,
+    "node": "photosynthesis",
+    "learner_utterance": "Photosynthesis converts light energy into chemical energy happens because plants absorb sugar from soil.",
+    "learner_correct": false,
+    "learner_explanation": "confident-but-wrong",
+    "activated_nodes": [
+      "photosynthesis"
+    ],
+    "policies_on": true,
+    "graphs_on": true,
+    "policy": "Persistent Misconception",
+    "action": "restructure",
+    "tutor_prompt": "Learner said:\nPhotosynthesis converts light energy into chemical energy happens because plants absorb sugar from soil.\n\nCorrect: False\nExplanation type: confident-but-wrong\nActivated nodes: ['photosynthesis']\nPolicy: Persistent Misconception\nAction: restructure\n\nRespond as a tutor.",
+    "tutor_response": "I appreciate your enthusiasm for photosynthesis. However, the statement you provided contains a misconception. Photosynthesis is actually the process by which plants, algae, and some bacteria convert light energy from the sun into chemical energy in the form of glucose (a type of sugar). \n\nBut here's the key point: plants don't absorb sugar from the soil to convert light energy. Instead, they use carbon dioxide from the air, water from the soil, and light energy from the sun to produce glucose through photosynthesis.\n\nThink of it like a recipe:\n\n- Carbon dioxide from the air (CO2)\n- Water from the soil (H2O)\n- Light energy from the sun (energy)\n- Produce glucose (C6H12O6)\n\nSo, the correct sequence is: plants use light energy to convert carbon dioxide and water into glucose, not the other way around. Does that make sense?",
+    "confidence": 0.4,
+    "retention": 0.248,
+    "memory_strength": 0.65
+  },
+  {
+    "turn": 8,
+    "node": "photosynthesis",
+    "learner_utterance": "Photosynthesis converts light energy into chemical energy happens because plants absorb sugar from soil.",
+    "learner_correct": false,
+    "learner_explanation": "confident-but-wrong",
+    "activated_nodes": [
+      "photosynthesis"
+    ],
+    "policies_on": true,
+    "graphs_on": true,
+    "policy": "Persistent Misconception",
+    "action": "restructure",
+    "tutor_prompt": "Learner said:\nPhotosynthesis converts light energy into chemical energy happens because plants absorb sugar from soil.\n\nCorrect: False\nExplanation type: confident-but-wrong\nActivated nodes: ['photosynthesis']\nPolicy: Persistent Misconception\nAction: restructure\n\nRespond as a tutor.",
+    "tutor_response": "I appreciate your confidence, but it looks like there's a misconception here. Photosynthesis doesn't convert light energy into chemical energy because plants absorb sugar from the soil. In fact, the opposite is true. During photosynthesis, plants use energy from sunlight, carbon dioxide from the air, and water from the soil to produce glucose (sugar) and oxygen.\n\nLet's restructure the correct understanding: Photosynthesis converts light energy into chemical energy because plants use sunlight, carbon dioxide, and water to produce glucose (sugar) and oxygen.",
+    "confidence": 0.4,
+    "retention": 0.213,
+    "memory_strength": 0.58
+  },
+  {
+    "turn": 9,
+    "node": "photosynthesis",
+    "learner_utterance": "Photosynthesis converts light energy into chemical energy happens because plants absorb sugar from soil.",
+    "learner_correct": false,
+    "learner_explanation": "confident-but-wrong",
+    "activated_nodes": [
+      "photosynthesis"
+    ],
+    "policies_on": true,
+    "graphs_on": true,
+    "policy": "Persistent Misconception",
+    "action": "restructure",
+    "tutor_prompt": "Learner said:\nPhotosynthesis converts light energy into chemical energy happens because plants absorb sugar from soil.\n\nCorrect: False\nExplanation type: confident-but-wrong\nActivated nodes: ['photosynthesis']\nPolicy: Persistent Misconception\nAction: restructure\n\nRespond as a tutor.",
+    "tutor_response": "I see what you did there. Unfortunately, that's not quite correct. Photosynthesis is actually the process by which plants convert light energy from the sun into chemical energy in the form of glucose (a type of sugar), not the other way around. Plants absorb carbon dioxide and water from the soil and atmosphere, and then use light energy to create glucose and oxygen. So, the correct statement should be:\n\nPhotosynthesis converts light energy into chemical energy in the form of glucose.\n\nLet's try to restructure your understanding of this process. Can you think of what would happen if plants didn't have a way to convert light energy into chemical energy?",
+    "confidence": 0.4,
+    "retention": 0.179,
+    "memory_strength": 0.52
+  },
+  {
+    "turn": 10,
+    "node": "photosynthesis",
+    "learner_utterance": "Photosynthesis converts light energy into chemical energy happens because plants absorb sugar from soil.",
+    "learner_correct": false,
+    "learner_explanation": "confident-but-wrong",
+    "activated_nodes": [
+      "photosynthesis"
+    ],
+    "policies_on": true,
+    "graphs_on": true,
+    "policy": "Persistent Misconception",
+    "action": "restructure",
+    "tutor_prompt": "Learner said:\nPhotosynthesis converts light energy into chemical energy happens because plants absorb sugar from soil.\n\nCorrect: False\nExplanation type: confident-but-wrong\nActivated nodes: ['photosynthesis']\nPolicy: Persistent Misconception\nAction: restructure\n\nRespond as a tutor.",
+    "tutor_response": "I see where you're coming from, but unfortunately, that's not quite correct. Photosynthesis converts light energy into chemical energy, but it doesn't happen because plants absorb sugar from soil.\n\nHere's the correct explanation:\n\nPhotosynthesis is the process by which plants, algae, and some bacteria convert light energy from the sun into chemical energy in the form of glucose (a type of sugar). This process occurs in specialized organelles called chloroplasts, which contain pigments like chlorophyll that absorb light energy.\n\nThe key part of photosynthesis is the conversion of carbon dioxide and water into glucose and oxygen, using light energy as the driving force. This process requires carbon dioxide from the air and water from the soil, not sugar from the soil.\n\nThink of it like a factory where plants take in raw materials (carbon dioxide and water) and produce glucose and oxygen as products, using light energy as the power source.",
+    "confidence": 0.4,
+    "retention": 0.148,
+    "memory_strength": 0.5
+  },
+  {
+    "turn": 11,
+    "node": "photosynthesis",
+    "learner_utterance": "Photosynthesis converts light energy into chemical energy happens because plants absorb sugar from soil.",
+    "learner_correct": false,
+    "learner_explanation": "confident-but-wrong",
+    "activated_nodes": [
+      "photosynthesis"
+    ],
+    "policies_on": true,
+    "graphs_on": true,
+    "policy": "Persistent Misconception",
+    "action": "restructure",
+    "tutor_prompt": "Learner said:\nPhotosynthesis converts light energy into chemical energy happens because plants absorb sugar from soil.\n\nCorrect: False\nExplanation type: confident-but-wrong\nActivated nodes: ['photosynthesis']\nPolicy: Persistent Misconception\nAction: restructure\n\nRespond as a tutor.",
+    "tutor_response": "I see what you're getting at, but there's a bit of a mix-up here. Photosynthesis actually involves plants using sunlight, water, and carbon dioxide to produce sugar and oxygen, not absorbing sugar from the soil.\n\nLet's break it down:\n\n* Plants absorb water and nutrients from the soil, including nitrogen, phosphorus, and potassium.\n* They also absorb carbon dioxide from the air.\n* Using sunlight as an energy source, they convert these inputs into glucose (a type of sugar) and oxygen through a process called photosynthesis.\n\nSo, while plants do use sugar as a product of photosynthesis, they don't absorb it from the soil. Does that make sense?",
+    "confidence": 0.4,
+    "retention": 0.135,
+    "memory_strength": 0.5
+  }
+]

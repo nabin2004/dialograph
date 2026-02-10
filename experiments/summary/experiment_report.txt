@@ -1,0 +1,101 @@
+================================================================================
+EXPERIMENT REPORT
+Generated: 2026-02-11 03:02:51
+================================================================================
+
+============================================================
+LEARNER: MISCONCEPTION
+============================================================
+
+Condition: policies_on
+----------------------------------------
+  mean_confidence: 0.400 ± 0.000
+  mean_retention: 0.089 ± 0.000
+  mean_memory_strength: 0.816 ± 0.000
+  advance_rate: 0.000 ± 0.000
+  misconception_rate: 1.000 ± 0.000
+  policy_activation_rate: 1.000 ± 0.000
+  unique_nodes_visited: 1.000 ± 0.000
+  average_activation: 6.500 ± 0.000
+
+Condition: policies_off
+----------------------------------------
+  mean_confidence: 0.400 ± 0.000
+  mean_retention: 0.089 ± 0.000
+  mean_memory_strength: 0.816 ± 0.000
+  advance_rate: 0.000 ± 0.000
+  misconception_rate: 1.000 ± 0.000
+  policy_activation_rate: 0.000 ± 0.000
+  unique_nodes_visited: 1.000 ± 0.000
+  average_activation: 6.500 ± 0.000
+
+Policy Usage (policies_on condition):
+----------------------------------------
+  Persistent Misconception: 45
+  Forgetting / Spaced Reactivation: 10
+  Productive Struggle: 5
+
+============================================================
+LEARNER: GUESSER
+============================================================
+
+Condition: policies_on
+----------------------------------------
+  mean_confidence: 0.508 ± 0.024
+  mean_retention: 0.144 ± 0.029
+  mean_memory_strength: 1.819 ± 0.362
+  advance_rate: 0.000 ± 0.000
+  misconception_rate: 0.550 ± 0.162
+  policy_activation_rate: 1.000 ± 0.000
+  unique_nodes_visited: 1.000 ± 0.000
+  average_activation: 6.500 ± 0.000
+
+Condition: policies_off
+----------------------------------------
+  mean_confidence: 0.496 ± 0.027
+  mean_retention: 0.123 ± 0.028
+  mean_memory_strength: 1.649 ± 0.368
+  advance_rate: 0.517 ± 0.149
+  misconception_rate: 0.483 ± 0.149
+  policy_activation_rate: 0.000 ± 0.000
+  unique_nodes_visited: 3.000 ± 0.000
+  average_activation: 4.483 ± 0.365
+
+Policy Usage (policies_on condition):
+----------------------------------------
+  Persistent Misconception: 25
+  Fragile Knowledge: 23
+  Forgetting / Spaced Reactivation: 6
+  Guessing / Low Engagement: 4
+  Productive Struggle: 2
+
+============================================================
+LEARNER: FRAGILE
+============================================================
+
+Condition: policies_on
+----------------------------------------
+  mean_confidence: 0.713 ± 0.000
+  mean_retention: 0.280 ± 0.000
+  mean_memory_strength: 3.450 ± 0.000
+  advance_rate: 0.000 ± 0.000
+  misconception_rate: 0.000 ± 0.000
+  policy_activation_rate: 1.000 ± 0.000
+  unique_nodes_visited: 1.000 ± 0.000
+  average_activation: 6.500 ± 0.000
+
+Condition: policies_off
+----------------------------------------
+  mean_confidence: 0.637 ± 0.000
+  mean_retention: 0.226 ± 0.000
+  mean_memory_strength: 2.925 ± 0.000
+  advance_rate: 1.000 ± 0.000
+  misconception_rate: 0.000 ± 0.000
+  policy_activation_rate: 0.000 ± 0.000
+  unique_nodes_visited: 3.000 ± 0.000
+  average_activation: 4.750 ± 0.000
+
+Policy Usage (policies_on condition):
+----------------------------------------
+  Guessing / Low Engagement: 40
+  Fragile Knowledge: 20

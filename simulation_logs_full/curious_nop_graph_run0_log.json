@@ -1,0 +1,230 @@
+[
+  {
+    "turn": 0,
+    "node": "photosynthesis",
+    "learner_utterance": "I think Photosynthesis converts light energy into chemical energy, can you explain why this happens?",
+    "learner_correct": true,
+    "learner_explanation": "reflective",
+    "activated_nodes": [
+      "photosynthesis"
+    ],
+    "policies_on": false,
+    "graphs_on": true,
+    "policy": null,
+    "action": "advance",
+    "tutor_prompt": "Learner said:\nI think Photosynthesis converts light energy into chemical energy, can you explain why this happens?\n\nCorrect: True\nExplanation type: reflective\nActivated nodes: ['photosynthesis']\nPolicy: None\nAction: advance\n\nRespond as a tutor.",
+    "tutor_response": "That's a great start. Photosynthesis indeed converts light energy into chemical energy. But let's dive deeper into why this process occurs.\n\nPhotosynthesis happens because plants and some other organisms need energy to perform various functions like growth, reproduction, and survival. Light energy from the sun is a readily available and abundant source of energy, but it's not in a form that can be directly used by the cells.\n\nThe process of photosynthesis allows plants to harness light energy and convert it into a usable form: chemical energy, stored in the bonds of glucose (a type of sugar). This glucose is then used by the plant to fuel its growth and development.\n\nThink of it like a power plant that converts one type of energy (in this case, light energy) into another (chemical energy). This process is essential for life on Earth, as it produces oxygen as a byproduct, which is vital for many living organisms, including humans.\n\nSo, the conversion of light energy into chemical energy is a crucial step in the survival and growth of plants, and ultimately, the web of life.",
+    "confidence": 0.45,
+    "retention": 1.0,
+    "memory_strength": 2.1
+  },
+  {
+    "turn": 1,
+    "node": "light_reactions",
+    "learner_utterance": "I think Light reactions produce ATP and NADPH, can you explain why this happens?",
+    "learner_correct": true,
+    "learner_explanation": "reflective",
+    "activated_nodes": [
+      "light_reactions"
+    ],
+    "policies_on": false,
+    "graphs_on": true,
+    "policy": null,
+    "action": "advance",
+    "tutor_prompt": "Learner said:\nI think Light reactions produce ATP and NADPH, can you explain why this happens?\n\nCorrect: True\nExplanation type: reflective\nActivated nodes: ['light_reactions']\nPolicy: None\nAction: advance\n\nRespond as a tutor.",
+    "tutor_response": "That's a great start. The light reactions, also known as the Hill reaction or the light-dependent reaction, indeed produce ATP and NADPH.\n\nThe light reactions occur in the thylakoid membranes of the chloroplasts in plant cells and some algae. During these reactions, light energy is absorbed by pigments such as chlorophyll and converted into chemical energy.\n\nTwo key events happen during the light reactions:\n\n1. **Light-dependent electron transport**: Light energy excites electrons in the pigments, which are then transferred to a special molecule called an electron acceptor. This creates a series of electron carriers, resulting in a proton gradient across the thylakoid membrane.\n\n2. **ATP synthase**: The energy from the proton gradient is used to produce ATP through a process called chemiosmosis. This is the same mechanism by which mitochondria produce ATP during cellular respiration.\n\nAs for NADPH, it's produced during the light-dependent reactions when electrons from the electron transport chain are transferred to NADP+ (nicotinamide adenine dinucleotide phosphate), resulting in the formation of NADPH.\n\nIn summary, the light reactions produce ATP and NADPH as byproducts of the light-dependent electron transport and the subsequent chemiosmosis process. This energy-rich ATP and NADPH are then used in the Calvin cycle to fix carbon dioxide and produce glucose.\n\nWell done on understanding the basics of the light reactions! What would you like to explore next?",
+    "confidence": 0.45,
+    "retention": 0.513,
+    "memory_strength": 2.1
+  },
+  {
+    "turn": 2,
+    "node": "photosystem_ii",
+    "learner_utterance": "I think Photosystem II excites electrons, can you explain why this happens?",
+    "learner_correct": true,
+    "learner_explanation": "reflective",
+    "activated_nodes": [
+      "photosystem_ii"
+    ],
+    "policies_on": false,
+    "graphs_on": true,
+    "policy": null,
+    "action": "advance",
+    "tutor_prompt": "Learner said:\nI think Photosystem II excites electrons, can you explain why this happens?\n\nCorrect: True\nExplanation type: reflective\nActivated nodes: ['photosystem_ii']\nPolicy: None\nAction: advance\n\nRespond as a tutor.",
+    "tutor_response": "Photosystem II is indeed responsible for exciting electrons. To understand why this happens, let's reflect on the process.\n\nIn Photosystem II, light energy from the sun is absorbed by special pigments called chlorophyll and other accessory pigments. When this energy is absorbed, it excites the electrons in these pigments, leading to a series of electron transfer reactions. \n\nThese reactions ultimately result in the formation of a high-energy electron pair, which is then used to generate ATP (adenosine triphosphate) and NADPH (nicotinamide adenine dinucleotide phosphate). These molecules play crucial roles in the light-independent reactions (Calvin cycle), where they provide the energy required for carbon fixation and the synthesis of glucose.\n\nIn essence, Photosystem II uses light energy to excite electrons, setting off a chain of reactions that ultimately lead to the production of ATP and NADPH, which are essential for plant growth and development.\n\nLet's advance to the next concept. Do you have any questions or would you like to proceed?",
+    "confidence": 0.45,
+    "retention": 0.264,
+    "memory_strength": 2.1
+  },
+  {
+    "turn": 3,
+    "node": "electron_transport_chain",
+    "learner_utterance": "I think Electron transport creates a proton gradient, can you explain why this happens?",
+    "learner_correct": true,
+    "learner_explanation": "reflective",
+    "activated_nodes": [
+      "electron_transport_chain"
+    ],
+    "policies_on": false,
+    "graphs_on": true,
+    "policy": null,
+    "action": "advance",
+    "tutor_prompt": "Learner said:\nI think Electron transport creates a proton gradient, can you explain why this happens?\n\nCorrect: True\nExplanation type: reflective\nActivated nodes: ['electron_transport_chain']\nPolicy: None\nAction: advance\n\nRespond as a tutor.",
+    "tutor_response": "You're absolutely right that electron transport creates a proton gradient. Let's break it down:\n\nDuring electron transport in the electron transport chain (ETC), electrons are passed through a series of protein complexes in the mitochondrial inner membrane. As these electrons move down the energy gradient, they lose energy. \n\nHowever, the key point to consider is that the energy lost by the electrons is not directly converted into ATP. Instead, it's used to pump protons (H+ ions) across the membrane. This creates a concentration gradient, also known as a proton gradient, where there's a high concentration of protons on the other side of the membrane from where they were originally located.\n\nThe proton gradient is crucial because it drives the next step in cellular respiration: chemiosmosis. During chemiosmosis, protons flow back across the membrane through the enzyme ATP synthase, which uses the energy from these protons to drive the synthesis of ATP from ADP and Pi.\n\nSo, electron transport creates a proton gradient, which in turn drives ATP synthesis through chemiosmosis.",
+    "confidence": 0.45,
+    "retention": 0.135,
+    "memory_strength": 2.1
+  },
+  {
+    "turn": 4,
+    "node": "photosystem_i",
+    "learner_utterance": "I think Photosystem I produces NADPH, can you explain why this happens?",
+    "learner_correct": true,
+    "learner_explanation": "reflective",
+    "activated_nodes": [
+      "photosystem_i"
+    ],
+    "policies_on": false,
+    "graphs_on": true,
+    "policy": null,
+    "action": "advance",
+    "tutor_prompt": "Learner said:\nI think Photosystem I produces NADPH, can you explain why this happens?\n\nCorrect: True\nExplanation type: reflective\nActivated nodes: ['photosystem_i']\nPolicy: None\nAction: advance\n\nRespond as a tutor.",
+    "tutor_response": "Photosystem I indeed produces NADPH. This occurs as a result of the light-dependent reactions during photosynthesis. When light is absorbed by Photosystem I, it causes the primary electron acceptor to become excited. This leads to the transfer of electrons, ultimately resulting in the generation of a high-energy electron pair.\n\nThe electrons then move through a series of electron carriers in the thylakoid membrane, ultimately reducing NADP+ to form NADPH. This process is crucial for the light-dependent reactions, as NADPH serves as a critical electron carrier that can be used in the light-independent reactions (Calvin cycle) to produce glucose from CO2.\n\nThis process also involves the generation of ATP, which is produced through the action of Photosystem II and the subsequent transfer of electrons through the electron transport chain.\n\nLet's review: Photosystem I is responsible for the production of NADPH through light-dependent reactions. This process is essential for the production of glucose in plants.",
+    "confidence": 0.45,
+    "retention": 0.069,
+    "memory_strength": 2.1
+  },
+  {
+    "turn": 5,
+    "node": "photosystem_i",
+    "learner_utterance": "I think Photosystem I produces NADPH, can you explain why this happens?",
+    "learner_correct": true,
+    "learner_explanation": "reflective",
+    "activated_nodes": [
+      "photosystem_i"
+    ],
+    "policies_on": false,
+    "graphs_on": true,
+    "policy": null,
+    "action": "advance",
+    "tutor_prompt": "Learner said:\nI think Photosystem I produces NADPH, can you explain why this happens?\n\nCorrect: True\nExplanation type: reflective\nActivated nodes: ['photosystem_i']\nPolicy: None\nAction: advance\n\nRespond as a tutor.",
+    "tutor_response": "Photosystem I does indeed produce NADPH. This process occurs through a series of electron transfer reactions. When light is absorbed by the pigments in Photosystem I, it excites electrons that are then transferred through a series of electron carriers. This results in the production of NADPH and ATP in the stroma of the chloroplast.",
+    "confidence": 0.5,
+    "retention": 0.621,
+    "memory_strength": 2.7
+  },
+  {
+    "turn": 6,
+    "node": "photosystem_i",
+    "learner_utterance": "I think Photosystem I produces NADPH, can you explain why this happens?",
+    "learner_correct": true,
+    "learner_explanation": "reflective",
+    "activated_nodes": [
+      "photosystem_i"
+    ],
+    "policies_on": false,
+    "graphs_on": true,
+    "policy": null,
+    "action": "advance",
+    "tutor_prompt": "Learner said:\nI think Photosystem I produces NADPH, can you explain why this happens?\n\nCorrect: True\nExplanation type: reflective\nActivated nodes: ['photosystem_i']\nPolicy: None\nAction: advance\n\nRespond as a tutor.",
+    "tutor_response": "Photosystem I indeed produces NADPH. This is because Photosystem I is part of the light-dependent reactions in the first stage of photosynthesis.\n\nIn this process, light energy is absorbed by special pigments in Photosystem I, such as chlorophyll a and other accessory pigments. This energy excites electrons, which are then passed along the electron transport chain. As the electrons move down the transport chain, they lose energy, which is used to pump protons across the thylakoid membrane, generating a proton gradient. This gradient is used to produce ATP through the process of chemiosmosis.\n\nThe energy from the light also drives the reduction of NADP+ to form NADPH. This reaction occurs in the stroma of the chloroplast, where the reduced electrons from Photosystem I are transferred to NADP+, resulting in the production of NADPH.\n\nSo, to summarize, Photosystem I plays a crucial role in the light-dependent reactions of photosynthesis by absorbing light energy, passing electrons along the transport chain, and ultimately producing NADPH, along with ATP.",
+    "confidence": 0.55,
+    "retention": 0.69,
+    "memory_strength": 3.3
+  },
+  {
+    "turn": 7,
+    "node": "photosystem_i",
+    "learner_utterance": "I think Photosystem I produces NADPH, can you explain why this happens?",
+    "learner_correct": true,
+    "learner_explanation": "reflective",
+    "activated_nodes": [
+      "photosystem_i"
+    ],
+    "policies_on": false,
+    "graphs_on": true,
+    "policy": null,
+    "action": "advance",
+    "tutor_prompt": "Learner said:\nI think Photosystem I produces NADPH, can you explain why this happens?\n\nCorrect: True\nExplanation type: reflective\nActivated nodes: ['photosystem_i']\nPolicy: None\nAction: advance\n\nRespond as a tutor.",
+    "tutor_response": "That's a great start, but let's dig a bit deeper into why Photosystem I produces NADPH.\n\nPhotosystem I is a crucial component of the light-dependent reactions in photosynthesis. Its main function is to convert light energy into a usable form of energy, specifically ATP and NADPH. By accepting electrons from water, it creates a series of electron carriers that ultimately lead to the production of NADPH.\n\nIn more detail, when light is absorbed by the pigments in Photosystem I, it leads to the formation of a high-energy electron pair. This electron pair is then transferred to a series of electron carriers, ultimately resulting in the reduction of NADP+ to form NADPH. This process not only generates NADPH but also produces a proton gradient across the thylakoid membrane, which is used to produce ATP through the process of chemiosmosis.\n\nSo, to summarize, Photosystem I produces NADPH by harnessing light energy to create a series of electron carriers that ultimately reduce NADP+ to form NADPH.\n\nLet's review:\n\n- What is the main function of Photosystem I in the light-dependent reactions?\n- What is the outcome of the energy conversion process in Photosystem I?\n- How does the electron transfer process in Photosystem I lead to the production of NADPH?\n\nNext step: Understanding the role of Photosystem II and the relationship between the two photosystems.",
+    "confidence": 0.6,
+    "retention": 0.739,
+    "memory_strength": 3.9
+  },
+  {
+    "turn": 8,
+    "node": "photosystem_i",
+    "learner_utterance": "I think Photosystem I produces NADPH, can you explain why this happens?",
+    "learner_correct": true,
+    "learner_explanation": "reflective",
+    "activated_nodes": [
+      "photosystem_i"
+    ],
+    "policies_on": false,
+    "graphs_on": true,
+    "policy": null,
+    "action": "advance",
+    "tutor_prompt": "Learner said:\nI think Photosystem I produces NADPH, can you explain why this happens?\n\nCorrect: True\nExplanation type: reflective\nActivated nodes: ['photosystem_i']\nPolicy: None\nAction: advance\n\nRespond as a tutor.",
+    "tutor_response": "You're absolutely right that Photosystem I is involved in the production of NADPH. However, let's reflect on the light-dependent reactions in photosynthesis a bit more.\n\nPhotosystem I and Photosystem II are both crucial components in the light-dependent reactions, but they have distinct roles. Photosystem I is responsible for the secondary electron transfer, producing NADPH and ATP. This occurs when electrons are passed from the special pair of chlorophyll molecules in Photosystem I to ferredoxin, ultimately leading to the reduction of NADP+ to NADPH.\n\nIn summary, Photosystem I is indeed responsible for the production of NADPH, but it's essential to understand the broader context of the light-dependent reactions and the roles of both Photosystems I and II. \n\nNow that we've clarified this concept, let's move forward with the next topic. What would you like to explore next?",
+    "confidence": 0.65,
+    "retention": 0.774,
+    "memory_strength": 4.5
+  },
+  {
+    "turn": 9,
+    "node": "photosystem_i",
+    "learner_utterance": "I think Photosystem I produces NADPH, can you explain why this happens?",
+    "learner_correct": true,
+    "learner_explanation": "reflective",
+    "activated_nodes": [
+      "photosystem_i"
+    ],
+    "policies_on": false,
+    "graphs_on": true,
+    "policy": null,
+    "action": "advance",
+    "tutor_prompt": "Learner said:\nI think Photosystem I produces NADPH, can you explain why this happens?\n\nCorrect: True\nExplanation type: reflective\nActivated nodes: ['photosystem_i']\nPolicy: None\nAction: advance\n\nRespond as a tutor.",
+    "tutor_response": "Photosystem I indeed produces NADPH, but let's dive into why this happens.\n\nDuring the light-dependent reactions of photosynthesis, light energy excites electrons in the thylakoid membranes. These electrons flow through a series of electron carriers called the electron transport chain, ultimately resulting in the production of a proton gradient.\n\nThis gradient is used to produce ATP through chemiosmosis. The electrons, however, need to be recycled back to the photosynthetic apparatus. They are passed through two types of electron acceptors: Plastocyanin and Ferredoxin.\n\nFerredoxin is a low-potential electron carrier that reduces NADP+ to NADPH in the stroma. This reduction is facilitated by the FNR (ferredoxin-NADP reductase) enzyme. The NADPH produced by Photosystem I is essential for the light-independent reactions (Calvin cycle), where it serves as a reducing agent for the fixation of CO2 into glucose.\n\nIn summary, Photosystem I produces NADPH to recycle electrons, which are then used in the Calvin cycle to produce glucose.",
+    "confidence": 0.7,
+    "retention": 0.801,
+    "memory_strength": 5.1
+  },
+  {
+    "turn": 10,
+    "node": "photosystem_i",
+    "learner_utterance": "I think Photosystem I produces NADPH, can you explain why this happens?",
+    "learner_correct": true,
+    "learner_explanation": "reflective",
+    "activated_nodes": [
+      "photosystem_i"
+    ],
+    "policies_on": false,
+    "graphs_on": true,
+    "policy": null,
+    "action": "advance",
+    "tutor_prompt": "Learner said:\nI think Photosystem I produces NADPH, can you explain why this happens?\n\nCorrect: True\nExplanation type: reflective\nActivated nodes: ['photosystem_i']\nPolicy: None\nAction: advance\n\nRespond as a tutor.",
+    "tutor_response": "Photosystem I indeed produces NADPH. This happens because the electrons transferred during the light reaction of Photosystem I excite electrons in a series of electron carriers, ultimately leading to the formation of NADPH. The process is part of the light-independent reactions, also known as the Calvin cycle, where NADPH serves as an electron carrier to drive the reduction of CO2 into organic compounds.\n\nHowever, let's clarify that Photosystem I is not directly responsible for the formation of NADPH. Instead, the electrons it excites are passed to a series of electron carriers, including ferredoxin, which then reduces NADP+ to form NADPH.",
+    "confidence": 0.75,
+    "retention": 0.822,
+    "memory_strength": 5.7
+  },
+  {
+    "turn": 11,
+    "node": "photosystem_i",
+    "learner_utterance": "I think Photosystem I produces NADPH, can you explain why this happens?",
+    "learner_correct": true,
+    "learner_explanation": "reflective",
+    "activated_nodes": [
+      "photosystem_i"
+    ],
+    "policies_on": false,
+    "graphs_on": true,
+    "policy": null,
+    "action": "advance",
+    "tutor_prompt": "Learner said:\nI think Photosystem I produces NADPH, can you explain why this happens?\n\nCorrect: True\nExplanation type: reflective\nActivated nodes: ['photosystem_i']\nPolicy: None\nAction: advance\n\nRespond as a tutor.",
+    "tutor_response": "You're absolutely right that Photosystem I produces NADPH. This is a crucial step in the light-independent reactions, also known as the Calvin Cycle.\n\nPhotosystem I is a complex of pigments and proteins that plays a key role in absorbing light energy and transferring electrons to generate a high-energy electron pair. This energy is used to reduce NADP+ to form NADPH.\n\nThe process can be summarized as follows:\n\n- Light energy is absorbed by Photosystem I and transferred to a special molecule called an electron acceptor.\n- The energy is then transferred to a series of electron carriers in the thylakoid membrane.\n- Finally, the energy is used to reduce NADP+ to form NADPH.\n\nNADPH is a crucial molecule in the Calvin Cycle, as it provides the reducing power needed to convert CO2 into glucose.",
+    "confidence": 0.8,
+    "retention": 0.839,
+    "memory_strength": 6.3
+  }
+]

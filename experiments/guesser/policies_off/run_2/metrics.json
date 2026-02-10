@@ -1,0 +1,12 @@
+{
+  "turns": 12,
+  "mean_confidence": 0.5008333333333334,
+  "mean_retention": 0.10333333333333333,
+  "mean_memory_strength": 1.43525,
+  "advance_rate": 0.5,
+  "misconception_rate": 0.5,
+  "policy_activation_rate": 0.0,
+  "unique_nodes_visited": 3,
+  "average_activation": 4.75,
+  "policy_usage": {}
+}

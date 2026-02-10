@@ -1,0 +1,230 @@
+[
+  {
+    "turn": 0,
+    "node": "photosynthesis",
+    "learner_utterance": "I think Photosynthesis converts light energy into chemical energy, but I might be missing details.",
+    "learner_correct": true,
+    "learner_explanation": "shallow",
+    "activated_nodes": [
+      "photosynthesis"
+    ],
+    "policies_on": false,
+    "graphs_on": true,
+    "policy": null,
+    "action": "advance",
+    "tutor_prompt": "Learner said:\nI think Photosynthesis converts light energy into chemical energy, but I might be missing details.\n\nCorrect: True\nExplanation type: shallow\nActivated nodes: ['photosynthesis']\nPolicy: None\nAction: advance\n\nRespond as a tutor.",
+    "tutor_response": "That's correct. Photosynthesis indeed converts light energy into chemical energy. It's a crucial process that occurs in plants, algae, and some bacteria, producing glucose (a type of sugar) and oxygen from carbon dioxide and water, using sunlight as the energy source.",
+    "confidence": 0.45,
+    "retention": 1.0,
+    "memory_strength": 1.8
+  },
+  {
+    "turn": 1,
+    "node": "light_reactions",
+    "learner_utterance": "I think Light reactions produce ATP and NADPH, but I might be missing details.",
+    "learner_correct": true,
+    "learner_explanation": "shallow",
+    "activated_nodes": [
+      "light_reactions"
+    ],
+    "policies_on": false,
+    "graphs_on": true,
+    "policy": null,
+    "action": "advance",
+    "tutor_prompt": "Learner said:\nI think Light reactions produce ATP and NADPH, but I might be missing details.\n\nCorrect: True\nExplanation type: shallow\nActivated nodes: ['light_reactions']\nPolicy: None\nAction: advance\n\nRespond as a tutor.",
+    "tutor_response": "That's mostly correct. The light reactions, specifically the light-dependent reactions of photosynthesis, produce ATP and NADPH. These two energy-rich molecules are used in the light-independent reactions (Calvin cycle) to synthesize glucose from CO2.\n\nLet's advance to the next step.",
+    "confidence": 0.45,
+    "retention": 0.513,
+    "memory_strength": 1.8
+  },
+  {
+    "turn": 2,
+    "node": "photosystem_ii",
+    "learner_utterance": "I think Photosystem II excites electrons, but I might be missing details.",
+    "learner_correct": true,
+    "learner_explanation": "shallow",
+    "activated_nodes": [
+      "photosystem_ii"
+    ],
+    "policies_on": false,
+    "graphs_on": true,
+    "policy": null,
+    "action": "advance",
+    "tutor_prompt": "Learner said:\nI think Photosystem II excites electrons, but I might be missing details.\n\nCorrect: True\nExplanation type: shallow\nActivated nodes: ['photosystem_ii']\nPolicy: None\nAction: advance\n\nRespond as a tutor.",
+    "tutor_response": "That's a great start. Photosystem II indeed plays a crucial role in plant cells by exciting electrons, which is a key step in the process of photosynthesis. However, to provide more clarity, Photosystem II is a complex process that involves absorbing light energy to split water molecules into oxygen, protons, and electrons. The electrons excited by Photosystem II are then transferred to other parts of the photosynthetic pathway to ultimately produce ATP and NADPH. \n\nLet's explore more about photosynthesis and the role of Photosystem II in it. What would you like to know next?",
+    "confidence": 0.45,
+    "retention": 0.264,
+    "memory_strength": 1.8
+  },
+  {
+    "turn": 3,
+    "node": "electron_transport_chain",
+    "learner_utterance": "I think Electron transport creates a proton gradient, but I might be missing details.",
+    "learner_correct": true,
+    "learner_explanation": "shallow",
+    "activated_nodes": [
+      "electron_transport_chain"
+    ],
+    "policies_on": false,
+    "graphs_on": true,
+    "policy": null,
+    "action": "advance",
+    "tutor_prompt": "Learner said:\nI think Electron transport creates a proton gradient, but I might be missing details.\n\nCorrect: True\nExplanation type: shallow\nActivated nodes: ['electron_transport_chain']\nPolicy: None\nAction: advance\n\nRespond as a tutor.",
+    "tutor_response": "That's a good start. Electron transport in the electron transport chain indeed creates a proton gradient across the mitochondrial membrane. This is also known as the proton motive force.",
+    "confidence": 0.45,
+    "retention": 0.135,
+    "memory_strength": 1.8
+  },
+  {
+    "turn": 4,
+    "node": "photosystem_i",
+    "learner_utterance": "I think Photosystem I produces NADPH, but I might be missing details.",
+    "learner_correct": true,
+    "learner_explanation": "shallow",
+    "activated_nodes": [
+      "photosystem_i"
+    ],
+    "policies_on": false,
+    "graphs_on": true,
+    "policy": null,
+    "action": "advance",
+    "tutor_prompt": "Learner said:\nI think Photosystem I produces NADPH, but I might be missing details.\n\nCorrect: True\nExplanation type: shallow\nActivated nodes: ['photosystem_i']\nPolicy: None\nAction: advance\n\nRespond as a tutor.",
+    "tutor_response": "Photosystem I does indeed produce NADPH. This is an essential part of photosynthesis, where light energy is used to generate ATP and NADPH. These two energy carriers are then used to power the Calvin cycle, where carbon dioxide is converted into glucose.\n\nLet's move on to the next step. Do you remember what Photosystem II produces?",
+    "confidence": 0.45,
+    "retention": 0.069,
+    "memory_strength": 1.8
+  },
+  {
+    "turn": 5,
+    "node": "photosystem_i",
+    "learner_utterance": "I think Photosystem I produces NADPH, but I might be missing details.",
+    "learner_correct": true,
+    "learner_explanation": "shallow",
+    "activated_nodes": [
+      "photosystem_i"
+    ],
+    "policies_on": false,
+    "graphs_on": true,
+    "policy": null,
+    "action": "advance",
+    "tutor_prompt": "Learner said:\nI think Photosystem I produces NADPH, but I might be missing details.\n\nCorrect: True\nExplanation type: shallow\nActivated nodes: ['photosystem_i']\nPolicy: None\nAction: advance\n\nRespond as a tutor.",
+    "tutor_response": "You're on the right track. Photosystem I indeed produces NADPH, specifically in the light-independent reactions (Calvin cycle) of photosynthesis. However, it's worth noting that NADPH is primarily produced in the light-dependent reactions, where Photosystem II plays a key role. In the light-independent reactions, NADPH is used to drive the conversion of CO2 into glucose.\n\nSo, to recap: Photosystem I is crucial, but not directly responsible for NADPH production. It's more of a supporting player in the overall process of photosynthesis.\n\nLet's move forward. What's the next step or concept you'd like to explore?",
+    "confidence": 0.5,
+    "retention": 0.574,
+    "memory_strength": 2.1
+  },
+  {
+    "turn": 6,
+    "node": "photosystem_i",
+    "learner_utterance": "I think Photosystem I produces NADPH, but I might be missing details.",
+    "learner_correct": true,
+    "learner_explanation": "shallow",
+    "activated_nodes": [
+      "photosystem_i"
+    ],
+    "policies_on": false,
+    "graphs_on": true,
+    "policy": null,
+    "action": "advance",
+    "tutor_prompt": "Learner said:\nI think Photosystem I produces NADPH, but I might be missing details.\n\nCorrect: True\nExplanation type: shallow\nActivated nodes: ['photosystem_i']\nPolicy: None\nAction: advance\n\nRespond as a tutor.",
+    "tutor_response": "That's a good start. Photosystem I indeed produces NADPH, as part of the light-dependent reactions in photosynthesis. However, it's essential to note that it's Photosystem I and Photosystem II that work together to generate the energy required for the light-dependent reactions.\n\nLet's break it down: \n1. Photosystem II generates ATP and electrons.\n2. The high-energy electrons are then passed to Photosystem I, which generates even more ATP and NADPH.\n\nSo, while Photosystem I plays a crucial role in generating NADPH, it's part of a larger process involving both Photosystem I and Photosystem II. \n\nShall we proceed with the next concept?",
+    "confidence": 0.55,
+    "retention": 0.621,
+    "memory_strength": 2.4
+  },
+  {
+    "turn": 7,
+    "node": "photosystem_i",
+    "learner_utterance": "I think Photosystem I produces NADPH, but I might be missing details.",
+    "learner_correct": true,
+    "learner_explanation": "shallow",
+    "activated_nodes": [
+      "photosystem_i"
+    ],
+    "policies_on": false,
+    "graphs_on": true,
+    "policy": null,
+    "action": "advance",
+    "tutor_prompt": "Learner said:\nI think Photosystem I produces NADPH, but I might be missing details.\n\nCorrect: True\nExplanation type: shallow\nActivated nodes: ['photosystem_i']\nPolicy: None\nAction: advance\n\nRespond as a tutor.",
+    "tutor_response": "Photosystem I is indeed involved in the light-dependent reactions of photosynthesis and it produces NADPH, but not directly. It actually generates electrons that are passed along the electron transport chain, ultimately leading to the production of ATP and NADPH. The electrons from Photosystem I are passed to Ferredoxin, which then reduces ferredoxin-NADP+ reductase, producing NADPH.\n\nLet's move forward with the lesson.",
+    "confidence": 0.6,
+    "retention": 0.659,
+    "memory_strength": 2.7
+  },
+  {
+    "turn": 8,
+    "node": "photosystem_i",
+    "learner_utterance": "I think Photosystem I produces NADPH, but I might be missing details.",
+    "learner_correct": true,
+    "learner_explanation": "shallow",
+    "activated_nodes": [
+      "photosystem_i"
+    ],
+    "policies_on": false,
+    "graphs_on": true,
+    "policy": null,
+    "action": "advance",
+    "tutor_prompt": "Learner said:\nI think Photosystem I produces NADPH, but I might be missing details.\n\nCorrect: True\nExplanation type: shallow\nActivated nodes: ['photosystem_i']\nPolicy: None\nAction: advance\n\nRespond as a tutor.",
+    "tutor_response": "You're correct that Photosystem I produces NADPH. Photosystem I is actually a light-dependent reaction that generates NADPH and ATP. This process is essential for the light-independent reactions, also known as the Calvin cycle, which uses these energy-rich molecules to synthesize glucose from carbon dioxide.\n\nNext, we can explore how Photosystem I works in the context of the light-dependent reactions. Would you like to proceed with that?",
+    "confidence": 0.65,
+    "retention": 0.69,
+    "memory_strength": 3.0
+  },
+  {
+    "turn": 9,
+    "node": "photosystem_i",
+    "learner_utterance": "I think Photosystem I produces NADPH, but I might be missing details.",
+    "learner_correct": true,
+    "learner_explanation": "shallow",
+    "activated_nodes": [
+      "photosystem_i"
+    ],
+    "policies_on": false,
+    "graphs_on": true,
+    "policy": null,
+    "action": "advance",
+    "tutor_prompt": "Learner said:\nI think Photosystem I produces NADPH, but I might be missing details.\n\nCorrect: True\nExplanation type: shallow\nActivated nodes: ['photosystem_i']\nPolicy: None\nAction: advance\n\nRespond as a tutor.",
+    "tutor_response": "That's mostly correct.   Photosystem I indeed produces NADPH and reduces ferredoxin, but it doesn't directly produce NADPH. It's Photosystem II that produces NADPH through the electron transport chain.",
+    "confidence": 0.7,
+    "retention": 0.717,
+    "memory_strength": 3.3
+  },
+  {
+    "turn": 10,
+    "node": "photosystem_i",
+    "learner_utterance": "I think Photosystem I produces NADPH, but I might be missing details.",
+    "learner_correct": true,
+    "learner_explanation": "shallow",
+    "activated_nodes": [
+      "photosystem_i"
+    ],
+    "policies_on": false,
+    "graphs_on": true,
+    "policy": null,
+    "action": "advance",
+    "tutor_prompt": "Learner said:\nI think Photosystem I produces NADPH, but I might be missing details.\n\nCorrect: True\nExplanation type: shallow\nActivated nodes: ['photosystem_i']\nPolicy: None\nAction: advance\n\nRespond as a tutor.",
+    "tutor_response": "That's close, but let's make sure you have the full picture. Photosystem I does indeed produce NADPH, but it's part of a larger process called non-cyclic electron transport. In this process, light energy is used to convert NADP+ into NADPH, which is then used in the Calvin cycle for carbon fixation.\n\nTo clarify, Photosystem II also plays a role in this process by generating the high-energy electrons needed for Photosystem I to produce NADPH. So, while Photosystem I is directly responsible for producing NADPH, it's part of a bigger system involving both photosystems.\n\nNow that you have a better understanding, let's move forward.",
+    "confidence": 0.75,
+    "retention": 0.739,
+    "memory_strength": 3.6
+  },
+  {
+    "turn": 11,
+    "node": "photosystem_i",
+    "learner_utterance": "I think Photosystem I produces NADPH, but I might be missing details.",
+    "learner_correct": true,
+    "learner_explanation": "shallow",
+    "activated_nodes": [
+      "photosystem_i"
+    ],
+    "policies_on": false,
+    "graphs_on": true,
+    "policy": null,
+    "action": "advance",
+    "tutor_prompt": "Learner said:\nI think Photosystem I produces NADPH, but I might be missing details.\n\nCorrect: True\nExplanation type: shallow\nActivated nodes: ['photosystem_i']\nPolicy: None\nAction: advance\n\nRespond as a tutor.",
+    "tutor_response": "That's partially correct. Photosystem I is indeed involved in generating NADPH. However, it's more accurate to say that the overall process of light-dependent reactions in photosynthesis produces NADPH, and Photosystem I plays a crucial role in this process by transferring electrons to the electron transport chain.\n\nThink of it like this: Photosystem I is one piece of a larger puzzle, and its role is to produce a specific type of energy that contributes to the production of NADPH.",
+    "confidence": 0.8,
+    "retention": 0.757,
+    "memory_strength": 3.9
+  }
+]

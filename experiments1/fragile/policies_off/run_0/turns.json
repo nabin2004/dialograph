@@ -1,0 +1,122 @@
+[
+  {
+    "turn": 0,
+    "node": "photosynthesis",
+    "correct": true,
+    "confidence": 0.45,
+    "retention": 1.0,
+    "memory_strength": 1.8,
+    "policy": null,
+    "action": "advance"
+  },
+  {
+    "turn": 1,
+    "node": "light_reactions",
+    "correct": true,
+    "confidence": 0.45,
+    "retention": 0.513,
+    "memory_strength": 1.8,
+    "policy": null,
+    "action": "advance"
+  },
+  {
+    "turn": 2,
+    "node": "light_reactions",
+    "correct": true,
+    "confidence": 0.5,
+    "retention": 0.574,
+    "memory_strength": 2.1,
+    "policy": null,
+    "action": "advance"
+  },
+  {
+    "turn": 3,
+    "node": "light_reactions",
+    "correct": true,
+    "confidence": 0.55,
+    "retention": 0.621,
+    "memory_strength": 2.4,
+    "policy": null,
+    "action": "advance"
+  },
+  {
+    "turn": 4,
+    "node": "light_reactions",
+    "correct": true,
+    "confidence": 0.6,
+    "retention": 0.659,
+    "memory_strength": 2.7,
+    "policy": null,
+    "action": "advance"
+  },
+  {
+    "turn": 5,
+    "node": "light_reactions",
+    "correct": true,
+    "confidence": 0.65,
+    "retention": 0.69,
+    "memory_strength": 3.0,
+    "policy": null,
+    "action": "advance"
+  },
+  {
+    "turn": 6,
+    "node": "light_reactions",
+    "correct": true,
+    "confidence": 0.7,
+    "retention": 0.717,
+    "memory_strength": 3.3,
+    "policy": null,
+    "action": "advance"
+  },
+  {
+    "turn": 7,
+    "node": "light_reactions",
+    "correct": true,
+    "confidence": 0.75,
+    "retention": 0.739,
+    "memory_strength": 3.6,
+    "policy": null,
+    "action": "advance"
+  },
+  {
+    "turn": 8,
+    "node": "light_reactions",
+    "correct": true,
+    "confidence": 0.8,
+    "retention": 0.757,
+    "memory_strength": 3.9,
+    "policy": null,
+    "action": "advance"
+  },
+  {
+    "turn": 9,
+    "node": "light_reactions",
+    "correct": true,
+    "confidence": 0.85,
+    "retention": 0.774,
+    "memory_strength": 4.2,
+    "policy": null,
+    "action": "advance"
+  },
+  {
+    "turn": 10,
+    "node": "light_reactions",
+    "correct": true,
+    "confidence": 0.9,
+    "retention": 0.788,
+    "memory_strength": 4.5,
+    "policy": null,
+    "action": "advance"
+  },
+  {
+    "turn": 11,
+    "node": "light_reactions",
+    "correct": true,
+    "confidence": 0.9,
+    "retention": 0.801,
+    "memory_strength": 4.8,
+    "policy": null,
+    "action": "advance"
+  }
+]

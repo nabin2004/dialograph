@@ -1,0 +1,9 @@
+{
+  "turns": 12,
+  "mean_confidence": 0.567,
+  "mean_retention": 0.561,
+  "mean_memory_strength": 2.5,
+  "mastery_rate": 0.083,
+  "advance_rate": 1.0,
+  "error_rate": 0.0
+}

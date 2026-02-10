@@ -1,0 +1,110 @@
+{
+  "misconception": {
+    "policies_on": {
+      "mean_confidence": {
+        "mean": 0.4,
+        "std": 0.0
+      },
+      "mean_retention": {
+        "mean": 0.089,
+        "std": 0.0
+      },
+      "mean_memory_strength": {
+        "mean": 0.816,
+        "std": 0.0
+      },
+      "advance_rate": {
+        "mean": 0.0,
+        "std": 0.0
+      },
+      "misconception_rate": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "policy_activation_rate": {
+        "mean": 1.0,
+        "std": 0.0
+      }
+    },
+    "policies_off": {
+      "mean_confidence": {
+        "mean": 0.4,
+        "std": 0.0
+      },
+      "mean_retention": {
+        "mean": 0.092,
+        "std": 0.0
+      },
+      "mean_memory_strength": {
+        "mean": 0.887,
+        "std": 0.0
+      },
+      "advance_rate": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "misconception_rate": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "policy_activation_rate": {
+        "mean": 0.0,
+        "std": 0.0
+      }
+    }
+  },
+  "fragile": {
+    "policies_on": {
+      "mean_confidence": {
+        "mean": 0.713,
+        "std": 0.0
+      },
+      "mean_retention": {
+        "mean": 0.28,
+        "std": 0.0
+      },
+      "mean_memory_strength": {
+        "mean": 3.45,
+        "std": 0.0
+      },
+      "advance_rate": {
+        "mean": 0.0,
+        "std": 0.0
+      },
+      "misconception_rate": {
+        "mean": 0.0,
+        "std": 0.0
+      },
+      "policy_activation_rate": {
+        "mean": 1.0,
+        "std": 0.0
+      }
+    },
+    "policies_off": {
+      "mean_confidence": {
+        "mean": 0.675,
+        "std": 0.0
+      },
+      "mean_retention": {
+        "mean": 0.253,
+        "std": 0.0
+      },
+      "mean_memory_strength": {
+        "mean": 3.175,
+        "std": 0.0
+      },
+      "advance_rate": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "misconception_rate": {
+        "mean": 0.0,
+        "std": 0.0
+      },
+      "policy_activation_rate": {
+        "mean": 0.0,
+        "std": 0.0
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "misconception": {
+    "policies_on": {
+      "Productive Struggle": 5,
+      "Forgetting / Spaced Reactivation": 10,
+      "Persistent Misconception": 45
+    }
+  },
+  "guesser": {
+    "policies_on": {
+      "Productive Struggle": 2,
+      "Guessing / Low Engagement": 4,
+      "Forgetting / Spaced Reactivation": 6,
+      "Fragile Knowledge": 23,
+      "Persistent Misconception": 25
+    }
+  },
+  "fragile": {
+    "policies_on": {
+      "Fragile Knowledge": 20,
+      "Guessing / Low Engagement": 40
+    }
+  }
+}

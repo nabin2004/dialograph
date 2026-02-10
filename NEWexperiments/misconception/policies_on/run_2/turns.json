@@ -1,0 +1,122 @@
+[
+  {
+    "turn": 0,
+    "node": "photosynthesis",
+    "correct": false,
+    "confidence": 0.4,
+    "retention": 1.0,
+    "memory_strength": 1.35,
+    "policy": "Productive Struggle",
+    "action": "hint"
+  },
+  {
+    "turn": 1,
+    "node": "photosynthesis",
+    "correct": false,
+    "confidence": 0.4,
+    "retention": 0.025,
+    "memory_strength": 1.215,
+    "policy": "Productive Struggle",
+    "action": "hint"
+  },
+  {
+    "turn": 2,
+    "node": "photosynthesis",
+    "correct": false,
+    "confidence": 0.4,
+    "retention": 0.016,
+    "memory_strength": 1.094,
+    "policy": "Productive Struggle",
+    "action": "hint"
+  },
+  {
+    "turn": 3,
+    "node": "photosynthesis",
+    "correct": false,
+    "confidence": 0.4,
+    "retention": 0.01,
+    "memory_strength": 0.984,
+    "policy": "Persistent Misconception",
+    "action": "restructure"
+  },
+  {
+    "turn": 4,
+    "node": "photosynthesis",
+    "correct": false,
+    "confidence": 0.4,
+    "retention": 0.006,
+    "memory_strength": 0.886,
+    "policy": "Persistent Misconception",
+    "action": "restructure"
+  },
+  {
+    "turn": 5,
+    "node": "photosynthesis",
+    "correct": false,
+    "confidence": 0.4,
+    "retention": 0.004,
+    "memory_strength": 0.797,
+    "policy": "Persistent Misconception",
+    "action": "restructure"
+  },
+  {
+    "turn": 6,
+    "node": "photosynthesis",
+    "correct": false,
+    "confidence": 0.4,
+    "retention": 0.002,
+    "memory_strength": 0.717,
+    "policy": "Persistent Misconception",
+    "action": "restructure"
+  },
+  {
+    "turn": 7,
+    "node": "photosynthesis",
+    "correct": false,
+    "confidence": 0.4,
+    "retention": 0.001,
+    "memory_strength": 0.646,
+    "policy": "Persistent Misconception",
+    "action": "restructure"
+  },
+  {
+    "turn": 8,
+    "node": "photosynthesis",
+    "correct": false,
+    "confidence": 0.4,
+    "retention": 0.0,
+    "memory_strength": 0.581,
+    "policy": "Persistent Misconception",
+    "action": "restructure"
+  },
+  {
+    "turn": 9,
+    "node": "photosynthesis",
+    "correct": false,
+    "confidence": 0.4,
+    "retention": 0.0,
+    "memory_strength": 0.523,
+    "policy": "Persistent Misconception",
+    "action": "restructure"
+  },
+  {
+    "turn": 10,
+    "node": "photosynthesis",
+    "correct": false,
+    "confidence": 0.4,
+    "retention": 0.0,
+    "memory_strength": 0.5,
+    "policy": "Persistent Misconception",
+    "action": "restructure"
+  },
+  {
+    "turn": 11,
+    "node": "photosynthesis",
+    "correct": false,
+    "confidence": 0.4,
+    "retention": 0.0,
+    "memory_strength": 0.5,
+    "policy": "Persistent Misconception",
+    "action": "restructure"
+  }
+]

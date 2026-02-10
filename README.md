@@ -175,3 +175,5 @@ If you use Dialograph in academic work, please cite the corresponding paper (com
     1. Simple neighbor retrieval
     2. Smart path-based retrieval
     3. Context-aware retrieval
+
+python real_run3.py

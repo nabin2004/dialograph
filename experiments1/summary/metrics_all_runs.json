@@ -1,0 +1,222 @@
+[
+  {
+    "learner": "fragile",
+    "condition": "policies_on",
+    "run": 0,
+    "turns": 12,
+    "mean_confidence": 0.7125,
+    "mean_retention": 0.7443333333333333,
+    "mean_memory_strength": 3.45,
+    "advance_rate": 0.0,
+    "misconception_rate": 0.0
+  },
+  {
+    "learner": "fragile",
+    "condition": "policies_on",
+    "run": 1,
+    "turns": 12,
+    "mean_confidence": 0.7125,
+    "mean_retention": 0.7443333333333333,
+    "mean_memory_strength": 3.45,
+    "advance_rate": 0.0,
+    "misconception_rate": 0.0
+  },
+  {
+    "learner": "fragile",
+    "condition": "policies_on",
+    "run": 2,
+    "turns": 12,
+    "mean_confidence": 0.7125,
+    "mean_retention": 0.7443333333333333,
+    "mean_memory_strength": 3.45,
+    "advance_rate": 0.0,
+    "misconception_rate": 0.0
+  },
+  {
+    "learner": "fragile",
+    "condition": "policies_on",
+    "run": 3,
+    "turns": 12,
+    "mean_confidence": 0.7125,
+    "mean_retention": 0.7443333333333333,
+    "mean_memory_strength": 3.45,
+    "advance_rate": 0.0,
+    "misconception_rate": 0.0
+  },
+  {
+    "learner": "fragile",
+    "condition": "policies_on",
+    "run": 4,
+    "turns": 12,
+    "mean_confidence": 0.7125,
+    "mean_retention": 0.7443333333333333,
+    "mean_memory_strength": 3.45,
+    "advance_rate": 0.0,
+    "misconception_rate": 0.0
+  },
+  {
+    "learner": "fragile",
+    "condition": "policies_off",
+    "run": 0,
+    "turns": 12,
+    "mean_confidence": 0.675,
+    "mean_retention": 0.7194166666666667,
+    "mean_memory_strength": 3.175,
+    "advance_rate": 1.0,
+    "misconception_rate": 0.0
+  },
+  {
+    "learner": "fragile",
+    "condition": "policies_off",
+    "run": 1,
+    "turns": 12,
+    "mean_confidence": 0.675,
+    "mean_retention": 0.7194166666666667,
+    "mean_memory_strength": 3.175,
+    "advance_rate": 1.0,
+    "misconception_rate": 0.0
+  },
+  {
+    "learner": "fragile",
+    "condition": "policies_off",
+    "run": 2,
+    "turns": 12,
+    "mean_confidence": 0.675,
+    "mean_retention": 0.7194166666666667,
+    "mean_memory_strength": 3.175,
+    "advance_rate": 1.0,
+    "misconception_rate": 0.0
+  },
+  {
+    "learner": "fragile",
+    "condition": "policies_off",
+    "run": 3,
+    "turns": 12,
+    "mean_confidence": 0.675,
+    "mean_retention": 0.7194166666666667,
+    "mean_memory_strength": 3.175,
+    "advance_rate": 1.0,
+    "misconception_rate": 0.0
+  },
+  {
+    "learner": "fragile",
+    "condition": "policies_off",
+    "run": 4,
+    "turns": 12,
+    "mean_confidence": 0.675,
+    "mean_retention": 0.7194166666666667,
+    "mean_memory_strength": 3.175,
+    "advance_rate": 1.0,
+    "misconception_rate": 0.0
+  },
+  {
+    "learner": "misconception",
+    "condition": "policies_on",
+    "run": 0,
+    "turns": 12,
+    "mean_confidence": 0.4,
+    "mean_retention": 0.35083333333333333,
+    "mean_memory_strength": 0.8160833333333334,
+    "advance_rate": 0.0,
+    "misconception_rate": 1.0
+  },
+  {
+    "learner": "misconception",
+    "condition": "policies_on",
+    "run": 1,
+    "turns": 12,
+    "mean_confidence": 0.4,
+    "mean_retention": 0.35083333333333333,
+    "mean_memory_strength": 0.8160833333333334,
+    "advance_rate": 0.0,
+    "misconception_rate": 1.0
+  },
+  {
+    "learner": "misconception",
+    "condition": "policies_on",
+    "run": 2,
+    "turns": 12,
+    "mean_confidence": 0.4,
+    "mean_retention": 0.35083333333333333,
+    "mean_memory_strength": 0.8160833333333334,
+    "advance_rate": 0.0,
+    "misconception_rate": 1.0
+  },
+  {
+    "learner": "misconception",
+    "condition": "policies_on",
+    "run": 3,
+    "turns": 12,
+    "mean_confidence": 0.4,
+    "mean_retention": 0.35083333333333333,
+    "mean_memory_strength": 0.8160833333333334,
+    "advance_rate": 0.0,
+    "misconception_rate": 1.0
+  },
+  {
+    "learner": "misconception",
+    "condition": "policies_on",
+    "run": 4,
+    "turns": 12,
+    "mean_confidence": 0.4,
+    "mean_retention": 0.35083333333333333,
+    "mean_memory_strength": 0.8160833333333334,
+    "advance_rate": 0.0,
+    "misconception_rate": 1.0
+  },
+  {
+    "learner": "misconception",
+    "condition": "policies_off",
+    "run": 0,
+    "turns": 12,
+    "mean_confidence": 0.4,
+    "mean_retention": 0.3823333333333333,
+    "mean_memory_strength": 0.8869166666666667,
+    "advance_rate": 1.0,
+    "misconception_rate": 1.0
+  },
+  {
+    "learner": "misconception",
+    "condition": "policies_off",
+    "run": 1,
+    "turns": 12,
+    "mean_confidence": 0.4,
+    "mean_retention": 0.3823333333333333,
+    "mean_memory_strength": 0.8869166666666667,
+    "advance_rate": 1.0,
+    "misconception_rate": 1.0
+  },
+  {
+    "learner": "misconception",
+    "condition": "policies_off",
+    "run": 2,
+    "turns": 12,
+    "mean_confidence": 0.4,
+    "mean_retention": 0.3823333333333333,
+    "mean_memory_strength": 0.8869166666666667,
+    "advance_rate": 1.0,
+    "misconception_rate": 1.0
+  },
+  {
+    "learner": "misconception",
+    "condition": "policies_off",
+    "run": 3,
+    "turns": 12,
+    "mean_confidence": 0.4,
+    "mean_retention": 0.3823333333333333,
+    "mean_memory_strength": 0.8869166666666667,
+    "advance_rate": 1.0,
+    "misconception_rate": 1.0
+  },
+  {
+    "learner": "misconception",
+    "condition": "policies_off",
+    "run": 4,
+    "turns": 12,
+    "mean_confidence": 0.4,
+    "mean_retention": 0.3823333333333333,
+    "mean_memory_strength": 0.8869166666666667,
+    "advance_rate": 1.0,
+    "misconception_rate": 1.0
+  }
+]

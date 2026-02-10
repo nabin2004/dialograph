@@ -1,0 +1,122 @@
+[
+  {
+    "turn": 0,
+    "node": "photosynthesis",
+    "correct": true,
+    "confidence": 0.45,
+    "retention": 1.0,
+    "memory_strength": 1.8,
+    "policy": "Fragile Knowledge",
+    "action": "ask_why"
+  },
+  {
+    "turn": 1,
+    "node": "photosynthesis",
+    "correct": true,
+    "confidence": 0.5,
+    "retention": 0.574,
+    "memory_strength": 2.1,
+    "policy": "Fragile Knowledge",
+    "action": "ask_why"
+  },
+  {
+    "turn": 2,
+    "node": "photosynthesis",
+    "correct": true,
+    "confidence": 0.55,
+    "retention": 0.621,
+    "memory_strength": 2.4,
+    "policy": "Fragile Knowledge",
+    "action": "ask_why"
+  },
+  {
+    "turn": 3,
+    "node": "photosynthesis",
+    "correct": true,
+    "confidence": 0.6,
+    "retention": 0.659,
+    "memory_strength": 2.7,
+    "policy": "Fragile Knowledge",
+    "action": "ask_why"
+  },
+  {
+    "turn": 4,
+    "node": "photosynthesis",
+    "correct": true,
+    "confidence": 0.65,
+    "retention": 0.69,
+    "memory_strength": 3.0,
+    "policy": "Illusion of Mastery",
+    "action": "probe"
+  },
+  {
+    "turn": 5,
+    "node": "photosynthesis",
+    "correct": true,
+    "confidence": 0.7,
+    "retention": 0.717,
+    "memory_strength": 3.3,
+    "policy": "Illusion of Mastery",
+    "action": "probe"
+  },
+  {
+    "turn": 6,
+    "node": "photosynthesis",
+    "correct": true,
+    "confidence": 0.75,
+    "retention": 0.739,
+    "memory_strength": 3.6,
+    "policy": "Illusion of Mastery",
+    "action": "probe"
+  },
+  {
+    "turn": 7,
+    "node": "photosynthesis",
+    "correct": true,
+    "confidence": 0.8,
+    "retention": 0.757,
+    "memory_strength": 3.9,
+    "policy": "Illusion of Mastery",
+    "action": "probe"
+  },
+  {
+    "turn": 8,
+    "node": "photosynthesis",
+    "correct": true,
+    "confidence": 0.85,
+    "retention": 0.774,
+    "memory_strength": 4.2,
+    "policy": "Illusion of Mastery",
+    "action": "probe"
+  },
+  {
+    "turn": 9,
+    "node": "photosynthesis",
+    "correct": true,
+    "confidence": 0.9,
+    "retention": 0.788,
+    "memory_strength": 4.5,
+    "policy": "Illusion of Mastery",
+    "action": "probe"
+  },
+  {
+    "turn": 10,
+    "node": "photosynthesis",
+    "correct": true,
+    "confidence": 0.9,
+    "retention": 0.801,
+    "memory_strength": 4.8,
+    "policy": "Illusion of Mastery",
+    "action": "probe"
+  },
+  {
+    "turn": 11,
+    "node": "photosynthesis",
+    "correct": true,
+    "confidence": 0.9,
+    "retention": 0.812,
+    "memory_strength": 5.1,
+    "policy": "Illusion of Mastery",
+    "action": "probe"
+  }
+]

@@ -1,0 +1,308 @@
+{
+  "misconception": {
+    "policies_on": {
+      "mean_confidence": {
+        "mean": 0.4,
+        "std": 0.0,
+        "min": 0.4,
+        "max": 0.4
+      },
+      "mean_retention": {
+        "mean": 0.089,
+        "std": 0.0,
+        "min": 0.089,
+        "max": 0.089
+      },
+      "mean_memory_strength": {
+        "mean": 0.816,
+        "std": 0.0,
+        "min": 0.816,
+        "max": 0.816
+      },
+      "advance_rate": {
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "misconception_rate": {
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "policy_activation_rate": {
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "unique_nodes_visited": {
+        "mean": 1,
+        "std": 0.0,
+        "min": 1,
+        "max": 1
+      },
+      "average_activation": {
+        "mean": 6.5,
+        "std": 0.0,
+        "min": 6.5,
+        "max": 6.5
+      }
+    },
+    "policies_off": {
+      "mean_confidence": {
+        "mean": 0.4,
+        "std": 0.0,
+        "min": 0.4,
+        "max": 0.4
+      },
+      "mean_retention": {
+        "mean": 0.089,
+        "std": 0.0,
+        "min": 0.089,
+        "max": 0.089
+      },
+      "mean_memory_strength": {
+        "mean": 0.816,
+        "std": 0.0,
+        "min": 0.816,
+        "max": 0.816
+      },
+      "advance_rate": {
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "misconception_rate": {
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "policy_activation_rate": {
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "unique_nodes_visited": {
+        "mean": 1,
+        "std": 0.0,
+        "min": 1,
+        "max": 1
+      },
+      "average_activation": {
+        "mean": 6.5,
+        "std": 0.0,
+        "min": 6.5,
+        "max": 6.5
+      }
+    }
+  },
+  "guesser": {
+    "policies_on": {
+      "mean_confidence": {
+        "mean": 0.508,
+        "std": 0.024,
+        "min": 0.475,
+        "max": 0.531
+      },
+      "mean_retention": {
+        "mean": 0.144,
+        "std": 0.029,
+        "min": 0.115,
+        "max": 0.183
+      },
+      "mean_memory_strength": {
+        "mean": 1.819,
+        "std": 0.362,
+        "min": 1.464,
+        "max": 2.307
+      },
+      "advance_rate": {
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "misconception_rate": {
+        "mean": 0.55,
+        "std": 0.162,
+        "min": 0.333,
+        "max": 0.75
+      },
+      "policy_activation_rate": {
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "unique_nodes_visited": {
+        "mean": 1,
+        "std": 0.0,
+        "min": 1,
+        "max": 1
+      },
+      "average_activation": {
+        "mean": 6.5,
+        "std": 0.0,
+        "min": 6.5,
+        "max": 6.5
+      }
+    },
+    "policies_off": {
+      "mean_confidence": {
+        "mean": 0.496,
+        "std": 0.027,
+        "min": 0.464,
+        "max": 0.538
+      },
+      "mean_retention": {
+        "mean": 0.123,
+        "std": 0.028,
+        "min": 0.097,
+        "max": 0.163
+      },
+      "mean_memory_strength": {
+        "mean": 1.649,
+        "std": 0.368,
+        "min": 1.258,
+        "max": 2.132
+      },
+      "advance_rate": {
+        "mean": 0.517,
+        "std": 0.149,
+        "min": 0.333,
+        "max": 0.667
+      },
+      "misconception_rate": {
+        "mean": 0.483,
+        "std": 0.149,
+        "min": 0.333,
+        "max": 0.667
+      },
+      "policy_activation_rate": {
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "unique_nodes_visited": {
+        "mean": 3,
+        "std": 0.0,
+        "min": 3,
+        "max": 3
+      },
+      "average_activation": {
+        "mean": 4.483,
+        "std": 0.365,
+        "min": 4.083,
+        "max": 4.75
+      }
+    }
+  },
+  "fragile": {
+    "policies_on": {
+      "mean_confidence": {
+        "mean": 0.713,
+        "std": 0.0,
+        "min": 0.713,
+        "max": 0.713
+      },
+      "mean_retention": {
+        "mean": 0.28,
+        "std": 0.0,
+        "min": 0.28,
+        "max": 0.28
+      },
+      "mean_memory_strength": {
+        "mean": 3.45,
+        "std": 0.0,
+        "min": 3.45,
+        "max": 3.45
+      },
+      "advance_rate": {
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "misconception_rate": {
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "policy_activation_rate": {
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "unique_nodes_visited": {
+        "mean": 1,
+        "std": 0.0,
+        "min": 1,
+        "max": 1
+      },
+      "average_activation": {
+        "mean": 6.5,
+        "std": 0.0,
+        "min": 6.5,
+        "max": 6.5
+      }
+    },
+    "policies_off": {
+      "mean_confidence": {
+        "mean": 0.637,
+        "std": 0.0,
+        "min": 0.637,
+        "max": 0.637
+      },
+      "mean_retention": {
+        "mean": 0.226,
+        "std": 0.0,
+        "min": 0.226,
+        "max": 0.226
+      },
+      "mean_memory_strength": {
+        "mean": 2.925,
+        "std": 0.0,
+        "min": 2.925,
+        "max": 2.925
+      },
+      "advance_rate": {
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "misconception_rate": {
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "policy_activation_rate": {
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "unique_nodes_visited": {
+        "mean": 3,
+        "std": 0.0,
+        "min": 3,
+        "max": 3
+      },
+      "average_activation": {
+        "mean": 4.75,
+        "std": 0.0,
+        "min": 4.75,
+        "max": 4.75
+      }
+    }
+  }
+}
