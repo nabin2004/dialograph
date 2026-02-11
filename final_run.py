@@ -58,7 +58,7 @@ class Dialograph:
 
     def update_retention(self, node_id, turn):
         s = self.state[node_id]
-        dt = (turn - s.last_turn) * TIME_COMPRESSION  # ✅ explicit acceleration
+        dt = (turn - s.last_turn) * TIME_COMPRESSION  #  explicit acceleration
         s.retention = exp(-dt / s.memory_strength)
 
     def activate(self, node_id, confidence, turn):
@@ -273,11 +273,11 @@ def run_experiments():
                     **metrics
                 })
 
-    # ✅ Save master table
+    #  Save master table
     summary_file = summary / "metrics_all_runs.json"
     json.dump(all_rows, open(summary_file, "w"), indent=2)
 
-    # ✅ Compute aggregated metrics per learner/condition
+    #  Compute aggregated metrics per learner/condition
     aggregated = {}
     for learner_name in set(r["learner"] for r in all_rows):
         aggregated[learner_name] = {}
