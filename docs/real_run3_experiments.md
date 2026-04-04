@@ -55,7 +55,7 @@ python real_run3.py
 
 ### What runs
 
-- **Learners (3):** `fragile`, `misconception`, `guesser` (see `FragileCorrectLearner`, `MisconceptionLearner`, `OverconfidentGuesser` in `real_run3.py`).
+- **Learners (3):** `fragile`, `misconception`, `guesser` (see `FragileCorrectLearner`, `MisconceptionLearner`, `OverconfidentGuesser` in `real_run3.py`). **`FragileCorrectLearner` always answers correctly**, so learning curves and error rate stay trivial for that archetype; use **`misconception`** or **`guesser`** when you need variability for plots and tables.
 - **Conditions (9):** `full_dialograph`, `no_policy`, `no_temporal`, `single_node`, `llm_baseline`, plus three KT controllers: `kt_heuristic_baseline` (`SimpleKT`), `kt_bkt_baseline` (`BKT`), `kt_dkt_style_baseline` (`DKTStyle`).
 - **Turns per run:** `DEFAULT_SIMULATION_TURNS` (50 by default).
 

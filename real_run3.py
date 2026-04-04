@@ -776,22 +776,29 @@ def compute_metrics(log: List[Dict[str, Any]]) -> Dict[str, Any]:
         out["error_rate"] = None
         return out
 
+    ret_vals = [r["retention"] for r in valid if r.get("retention") is not None]
+    mem_vals = [r["memory_strength"] for r in valid if r.get("memory_strength") is not None]
+    scored_correct = [r for r in valid if r.get("learner_correct") is not None]
+
     out.update(
         {
             # Legacy scalars (ablations / baselines)
             "mean_confidence": round(sum(r["confidence"] for r in valid) / len(valid), 3),
-            "mean_retention": round(sum(r["retention"] for r in valid) / len(valid), 3),
-            "mean_memory_strength": round(
-                sum(r["memory_strength"] for r in valid) / len(valid), 3
-            ),
+            "mean_retention": round(sum(ret_vals) / len(ret_vals), 3) if ret_vals else None,
+            "mean_memory_strength": round(sum(mem_vals) / len(mem_vals), 3)
+            if mem_vals
+            else None,
             "mastery_rate": round(
                 sum(1 for r in valid if r["confidence"] >= MASTERY_CONFIDENCE_THRESHOLD)
                 / len(valid),
                 3,
             ),
             "error_rate": round(
-                sum(1 for r in valid if not r["learner_correct"]) / len(valid), 3,
-            ),
+                sum(1 for r in scored_correct if not r["learner_correct"]) / len(scored_correct),
+                3,
+            )
+            if scored_correct
+            else None,
         }
     )
     return out

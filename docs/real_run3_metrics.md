@@ -118,11 +118,13 @@ You can also pass `model_name=` or `api_key=` when constructing `DialographAgent
 These remain useful for tables and baselines:
 
 - `mean_confidence`, `mean_retention`, `mean_memory_strength`
-- `mastery_rate` — fraction of graph-on turns with confidence ≥ 0.8
+- `mastery_rate` — fraction of turns with non-null confidence ≥ 0.8
 - `advance_rate` — fraction of all turns with `action == "advance"`
-- `error_rate` — fraction of graph-on turns with `learner_correct` false
+- `error_rate` — fraction of turns with non-null `learner_correct` that are false; `null` if no such rows
 
-When the log has no graph-on rows (`valid` empty), legacy means are written as `null`; time-series and rates still return where defined.
+`mean_retention` and `mean_memory_strength` average **only** turns where those fields are present (graph-on with temporal state). For **LLM-only baseline** rows, they are `null` in the log, so the corresponding means are **`null`** even when `mean_confidence` exists.
+
+When the log has no rows with confidence (`valid` empty), legacy means are written as `null`; time-series and rates still return where defined.
 
 ## Simulated learner: `MisconceptionLearner`
 
