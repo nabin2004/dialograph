@@ -141,7 +141,15 @@ def build_single_node_graph() -> Dialograph:
 # External baselines & run configuration
 # ============================================================
 
-PolicyMode = Literal["dialograph", "none", "kt"]
+PolicyMode = Literal["dialograph", "none", "kt", "kt_bkt", "kt_dkt_style"]
+
+KT_POLICY_MODES = frozenset({"kt", "kt_bkt", "kt_dkt_style"})
+
+KT_POLICY_LABELS: Dict[str, str] = {
+    "kt": "KT_heuristic",
+    "kt_bkt": "KT_BKT",
+    "kt_dkt_style": "KT_DKT_style",
+}
 
 
 @dataclass(frozen=True)
@@ -177,12 +185,16 @@ def llm_baseline_decision(correct: bool, turn_idx: int) -> str:
 
 class SimpleKT:
     """
-    Lightweight knowledge-tracing-style belief (not SOTA deep KT).
-    Used as an external baseline that models learning over time.
+    Heuristic scalar “mastery” (not classical BKT/DKT). Kept for comparison;
+    prefer ``BKT`` or ``DKTStyle`` for reviewer-facing KT baselines.
     """
 
     def __init__(self, mastery: float = 0.3):
         self.mastery = mastery
+
+    @property
+    def belief(self) -> float:
+        return self.mastery
 
     def update(self, correct: bool) -> None:
         if correct:
@@ -197,6 +209,87 @@ class SimpleKT:
         if self.mastery < 0.8:
             return "practice"
         return "advance"
+
+
+class BKT:
+    """
+    One-skill Bayesian Knowledge Tracing (Bayesian update + learning transition).
+    Interpretable baseline; not fitted to real data (fixed p_learn, p_slip, p_guess).
+    """
+
+    def __init__(
+        self,
+        p_init: float = 0.3,
+        p_learn: float = 0.2,
+        p_slip: float = 0.1,
+        p_guess: float = 0.2,
+    ):
+        self.p_know = p_init
+        self.p_learn = p_learn
+        self.p_slip = p_slip
+        self.p_guess = p_guess
+
+    @property
+    def belief(self) -> float:
+        return self.p_know
+
+    def update(self, correct: bool) -> None:
+        if correct:
+            num = self.p_know * (1.0 - self.p_slip)
+            den = num + (1.0 - self.p_know) * self.p_guess
+        else:
+            num = self.p_know * self.p_slip
+            den = num + (1.0 - self.p_know) * (1.0 - self.p_guess)
+        if den <= 0.0:
+            return
+        self.p_know = num / den
+        self.p_know = self.p_know + (1.0 - self.p_know) * self.p_learn
+        self.p_know = max(0.01, min(0.99, self.p_know))
+
+    def decide(self) -> str:
+        if self.p_know < 0.5:
+            return "review"
+        if self.p_know < 0.8:
+            return "practice"
+        return "advance"
+
+
+class DKTStyle:
+    """
+    Scalar latent state with the same update shape as a gated hidden unit (not trained).
+    Credible “deep KT style” comparison without PyTorch or datasets.
+    """
+
+    def __init__(self, hidden: float = 0.5):
+        self.hidden = hidden
+
+    @property
+    def belief(self) -> float:
+        return self.hidden
+
+    def update(self, correct: bool) -> None:
+        if correct:
+            self.hidden += 0.1 * (1.0 - self.hidden)
+        else:
+            self.hidden -= 0.1 * self.hidden
+        self.hidden = max(0.0, min(1.0, self.hidden))
+
+    def decide(self) -> str:
+        if self.hidden < 0.4:
+            return "review"
+        if self.hidden < 0.7:
+            return "practice"
+        return "advance"
+
+
+def make_kt_controller(policy_mode: PolicyMode):
+    if policy_mode == "kt":
+        return SimpleKT()
+    if policy_mode == "kt_bkt":
+        return BKT()
+    if policy_mode == "kt_dkt_style":
+        return DKTStyle()
+    return None
 
 
 # Fixed topic for LLM-only baseline (no semantic graph).
@@ -413,7 +506,7 @@ def run_turn(
     log: List[Dict[str, Any]],
     turn_idx: int,
     config: SimulationRunConfig,
-    kt: Optional[SimpleKT],
+    kt: Optional[Any],
     llm_state: Optional[TemporalNodeState],
 ) -> tuple[str, str]:
     base_log: Dict[str, Any] = {"turn": turn_idx, "condition": config.name}
@@ -464,11 +557,11 @@ def run_turn(
         action, policy = policy_decision(state, correct, explanation)
     elif config.policy_mode == "none":
         action, policy = no_policy_decision(correct)
-    else:
+    elif config.policy_mode in KT_POLICY_MODES:
         assert kt is not None
         kt.update(correct)
         action = kt.decide()
-        policy = "SimpleKT"
+        policy = KT_POLICY_LABELS[config.policy_mode]
 
     instruction = f"{action.upper()}: {node.content}"
     response = agent.next_action(instruction)
@@ -486,7 +579,7 @@ def run_turn(
             "confidence": round(new_conf, 2),
             "retention": round(state.retention, 3),
             "memory_strength": round(state.memory_strength, 2),
-            "kt_mastery": round(kt.mastery, 4) if kt is not None else None,
+            "kt_mastery": round(kt.belief, 4) if kt is not None else None,
             "temporal_on": config.temporal_on,
             "agent_instruction": instruction,
             "agent_response": response,
@@ -629,7 +722,11 @@ def run_simulation(
         else:
             graph = build_photosynthesis_graph()
 
-    kt = SimpleKT() if config.policy_mode == "kt" and config.graphs_on else None
+    kt = (
+        make_kt_controller(config.policy_mode)
+        if config.policy_mode in KT_POLICY_MODES and config.graphs_on
+        else None
+    )
 
     for t in range(turns):
         action, current_node = run_turn(
@@ -747,9 +844,23 @@ if __name__ == "__main__":
             llm_tutor_baseline=True,
         ),
         SimulationRunConfig(
-            "kt_baseline",
+            "kt_heuristic_baseline",
             graphs_on=True,
             policy_mode="kt",
+            temporal_on=True,
+            navigation_on=True,
+        ),
+        SimulationRunConfig(
+            "kt_bkt_baseline",
+            graphs_on=True,
+            policy_mode="kt_bkt",
+            temporal_on=True,
+            navigation_on=True,
+        ),
+        SimulationRunConfig(
+            "kt_dkt_style_baseline",
+            graphs_on=True,
+            policy_mode="kt_dkt_style",
             temporal_on=True,
             navigation_on=True,
         ),
