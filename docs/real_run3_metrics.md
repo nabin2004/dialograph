@@ -16,8 +16,8 @@ Each entry appended in `run_turn()` is a dictionary with (among others):
 | `learner_correct` | Simulated learner correctness; always set for graph runs and for the LLM baseline |
 | `confidence` | Learner confidence after the turn |
 | `action` | Chosen tutor action (`advance`, `give_hint`, `review`, `practice`, `explain`, …) |
-| `policy` | Dialograph policy name, `SimpleKT`, `LLM_tutor_baseline`, or `None` (no-policy ablation) |
-| `kt_mastery` | Simple KT belief after the turn when `policy_mode="kt"`; else `null` |
+| `policy` | Dialograph policy name, `KT_heuristic` / `KT_BKT` / `KT_DKT_style`, `LLM_tutor_baseline`, or `None` (no-policy ablation) |
+| `kt_mastery` | Latent **belief** scalar after the turn for any KT controller (`SimpleKT`, `BKT`, `DKTStyle`); else `null` |
 | `temporal_on` | Whether retention / memory-strength updates were enabled for this condition |
 
 Metrics are **pure functions** of this log; they do not call the LLM.
@@ -33,23 +33,33 @@ Runs are configured with `SimulationRunConfig` and `run_simulation(learner, conf
 | `no_temporal` | Full multinode | **Off** | Dialograph policies |
 | `single_node` | One node only (no navigation) | On | Dialograph policies |
 | `llm_baseline` | **Off** | Off (no graph memory) | Scripted tutor: `llm_baseline_decision` (hint / ask / explain) |
-| `kt_baseline` | Full multinode | On (graph time state) | **SimpleKT** mastery → `review` / `practice` / `advance` |
+| `kt_heuristic_baseline` | Full multinode | On | **SimpleKT** — heuristic scalar mastery (legacy “toy” KT for contrast) |
+| `kt_bkt_baseline` | Full multinode | On | **BKT** — one-skill Bayesian Knowledge Tracing (fixed \(p_{\mathrm{learn}}, p_{\mathrm{slip}}, p_{\mathrm{guess}}\)) |
+| `kt_dkt_style_baseline` | Full multinode | On | **DKTStyle** — untrained scalar latent with gated updates (DKT-*style*, not a trained LSTM) |
 
 **How to frame comparisons (paper):**
 
 - **LLM baseline** — isolates *decision structure + graph + memory* vs raw generation with a minimal reactive script (not “always explain”).
-- **KT baseline** — a lightweight *temporal* decision model that is not your graph or policies; answers “did you beat a standard learning-over-time controller?”
+- **KT baselines** — temporal belief updates **without** Dialograph’s declarative cognitive policies; cite **BKT** as the classical interpretable reference and **DKTStyle** as a lightweight stand-in for deep KT (make clear it is **not** dataset-trained DKT).
+- **GKT / graph KT** — you can **discuss in related work** without implementing; Dialograph’s differentiator is explicit **pedagogical policies** on top of temporal state, not SOTA graph-KT parameter fitting.
 - **Ablations** — isolate policies, temporal updates, and graph navigation without claiming a third-party SOTA system.
 
 Prefer cautious language, e.g. that Dialograph *shows* lower premature advancement or higher stability under simulation, rather than absolute “outperforms all baselines” unless backed by stats.
 
-### `SimpleKT`
+### Knowledge-tracing controllers (code reference)
 
-A small mastery parameter updated by correctness (clamped between 0.01 and 0.99); `decide()` maps mastery to `review` / `practice` / `advance`. It is **not** deep knowledge tracing; it is an explicit, cheap temporal baseline.
+| Class | `policy_mode` | Role |
+|-------|----------------|------|
+| `SimpleKT` | `kt` | Heuristic \(m\): cheap control path for ablations. |
+| `BKT` | `kt_bkt` | Standard BKT **equations** (Bayesian observe + learn); parameters not fitted to logs. |
+| `DKTStyle` | `kt_dkt_style` | Scalar \(h\) with LSTM-like gated nudges; **not** trained on sequences. |
+
+Each exposes `.belief` (logged as `kt_mastery`) and `decide()` → `review` / `practice` / `advance` with thresholds documented in [Formal mechanics](real_run3_formal_mechanics.md).
 
 ### `mean_kt_mastery`
 
-In `compute_metrics`, mean of per-turn `kt_mastery` when present (KT runs only); otherwise `null`.
+In `compute_metrics`, mean of per-turn `kt_mastery` (the controller’s **belief** scalar) when present; otherwise `null`. See also [Paper: KT positioning & claims](paper_addendum_kt_positioning.md).
+
 
 ## LLM backend (OpenRouter)
 

@@ -182,7 +182,7 @@ if policy_mode == dialograph:
 else if policy_mode == none:
     (action, label) ← (advance if y else give_hint, None)
 else:
-    KT.update(y); action ← KT.decide(); label ← "SimpleKT"
+    KT.update(y); action ← KT.decide(); label ← KT policy tag (e.g. KT_BKT)
 
 instruction ← UPPER(action) + ": " + content(v)
 response ← LLM(instruction)
@@ -200,9 +200,13 @@ return (action, v_next)
 
 ---
 
-## 6. KT baseline (external temporal controller)
+## 6. Knowledge-tracing baselines (external temporal controllers)
 
-For completeness, the **SimpleKT** baseline maintains scalar mastery \(m \in (0,1)\). After observing correctness \(y\):
+All three share the same **interface**: `update(y)` after observing correctness \(y\), then `decide()` maps a scalar belief to `review` / `practice` / `advance`. The log field `kt_mastery` stores the belief after each turn.
+
+### 6.1 Heuristic KT (`SimpleKT`, `policy_mode = kt`)
+
+Scalar \(m \in (0,1)\):
 
 \[
 m \leftarrow
@@ -214,16 +218,47 @@ m - 0.1\,m, & \neg y,
 m \leftarrow \mathrm{clip}(m,\,0.01,\,0.99).
 \]
 
-Decision (threshold policy):
+Thresholds: \(\texttt{review}\) if \(m<0.5\), \(\texttt{practice}\) if \(0.5 \le m < 0.8\), else \(\texttt{advance}\).
+
+### 6.2 Bayesian Knowledge Tracing (`BKT`, `policy_mode = kt_bkt`)
+
+One skill; \(P(\text{know}) = p \in (0,1)\). Fixed parameters \(p_{\mathrm{learn}}, p_{\mathrm{slip}}, p_{\mathrm{guess}}\) (defaults \(0.2, 0.1, 0.2\); initial \(p \leftarrow 0.3\)).
+
+**Bayesian observe** given response \(y \in \{\text{correct},\text{incorrect}\}\):
 
 \[
-\text{action} =
-\begin{cases}
-\texttt{review}, & m < 0.5, \\
-\texttt{practice}, & 0.5 \le m < 0.8, \\
-\texttt{advance}, & m \ge 0.8.
-\end{cases}
+p \leftarrow \frac{P(\text{know})\,P(y \mid \text{know})}{P(y)}, \quad
+P(y) = P(\text{know})P(y\mid\text{know}) + P(\neg\text{know})P(y\mid\neg\text{know}),
 \]
+
+with \(P(\text{correct}\mid\text{know}) = 1-p_{\mathrm{slip}}\), \(P(\text{correct}\mid\neg\text{know}) = p_{\mathrm{guess}}\), \(P(\text{incorrect}\mid\text{know}) = p_{\mathrm{slip}}\), \(P(\text{incorrect}\mid\neg\text{know}) = 1-p_{\mathrm{guess}}\).
+
+**Learning transition** (same step as code):
+
+\[
+p \leftarrow p + (1-p)\, p_{\mathrm{learn}}, \qquad
+p \leftarrow \mathrm{clip}(p,\,0.01,\,0.99).
+\]
+
+Thresholds: \(\texttt{review}\) if \(p<0.5\), \(\texttt{practice}\) if \(0.5 \le p < 0.8\), else \(\texttt{advance}\).
+
+*Paper note:* parameters are **not** fit to data in this repo; state that explicitly or report a sensitivity table.
+
+### 6.3 DKT-style scalar (`DKTStyle`, `policy_mode = kt_dkt_style`)
+
+Untrained latent \(h \in [0,1]\) (stands in for a hidden state without LSTM training):
+
+\[
+h \leftarrow
+\begin{cases}
+h + 0.1\,(1-h), & y, \\
+h - 0.1\,h, & \neg y,
+\end{cases}
+\qquad
+h \leftarrow \mathrm{clip}(h,\,0,\,1).
+\]
+
+Thresholds: \(\texttt{review}\) if \(h<0.4\), \(\texttt{practice}\) if \(0.4 \le h < 0.7\), else \(\texttt{advance}\).
 
 ---
 

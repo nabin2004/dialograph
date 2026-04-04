@@ -23,6 +23,7 @@ nav:
       - Running experiments: real_run3_experiments.md
       - Metrics & baselines: real_run3_metrics.md
       - Formal mechanics (LaTeX): real_run3_formal_mechanics.md
+      - Paper notes (KT positioning): paper_addendum_kt_positioning.md
   - Contributing:
       - Building the docs: how_to_build_docs.md
   - API:

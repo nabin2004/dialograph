@@ -56,11 +56,13 @@ python real_run3.py
 ### What runs
 
 - **Learners (3):** `fragile`, `misconception`, `guesser` (see `FragileCorrectLearner`, `MisconceptionLearner`, `OverconfidentGuesser` in `real_run3.py`).
-- **Conditions (6):** `full_dialograph`, `no_policy`, `no_temporal`, `single_node`, `llm_baseline`, `kt_baseline`.
+- **Conditions (9):** `full_dialograph`, `no_policy`, `no_temporal`, `single_node`, `llm_baseline`, plus three KT controllers: `kt_heuristic_baseline` (`SimpleKT`), `kt_bkt_baseline` (`BKT`), `kt_dkt_style_baseline` (`DKTStyle`).
 - **Turns per run:** `DEFAULT_SIMULATION_TURNS` (50 by default).
 
 Each combination calls the LLM once per turn, so **full batch cost** scales with  
-\(3 \times 6 \times 50 = 900\) completions (plus your chosen model’s pricing).
+\(3 \times 9 \times 50 = 1350\) completions (plus your chosen model’s pricing).
+
+For **what to claim in the paper** about KT vs Dialograph, see [Paper: KT positioning & claims](paper_addendum_kt_positioning.md).
 
 ### Outputs
 
@@ -124,7 +126,9 @@ For **offline tests**, pass a mock agent with a `next_action(self, instruction: 
 | `no_temporal` | No retention / memory-strength updates |
 | `single_node` | One node, no prerequisite navigation |
 | `llm_baseline` | No graph; scripted tutor + same simulated learner |
-| `kt_baseline` | SimpleKT replaces Dialograph policies |
+| `kt_heuristic_baseline` | `SimpleKT` (heuristic scalar) |
+| `kt_bkt_baseline` | `BKT` (Bayesian KT, fixed hyperparameters) |
+| `kt_dkt_style_baseline` | `DKTStyle` (untrained latent; not full DKT) |
 
 ---
 
