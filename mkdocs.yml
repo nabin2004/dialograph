@@ -12,12 +12,19 @@ plugins:
   - mkdocstrings:
       handlers:
         python:
+          paths: [src]
           options:
             docstring_style: google
             show_source: false
 
 nav:
   - Home: index.md
+  - Simulation (real_run3):
+      - Running experiments: real_run3_experiments.md
+      - Metrics & baselines: real_run3_metrics.md
+      - Formal mechanics (LaTeX): real_run3_formal_mechanics.md
+  - Contributing:
+      - Building the docs: how_to_build_docs.md
   - API:
       - Dialograph: api/dialograph.md
       - Node: api/node.md
