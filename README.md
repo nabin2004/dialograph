@@ -122,8 +122,20 @@ graph.add_edge(e3)
 graph.add_edge(e4)
 graph.add_edge(e5)
 
-draw(graph)
+# Static visualization (deterministic, saves to file)
+draw(graph, filename="my_graph.html")
+
+# Or get HTML string
+html = draw(graph)
+
+# Interactive visualization (starts local server)
+from dialograph import draw_live
+server = draw_live(graph)  # Opens in browser automatically
+# ... explore interactively ...
+server.shutdown()  # Clean up when done
 ```
+
+For more visualization options, see the [Visualization Guide](docs/visualization.md).
 
 ---
 
@@ -149,7 +161,7 @@ APIs may evolve, but core abstractions are expected to remain stable.
 * [ ] Path-based retrieval
 * [ ] Forgetting thresholds
 * [ ] Graph serialization
-* [ ] 3D / interactive visualization
+* [x] Interactive visualization (✓ Completed: `draw_live()`)
 * [ ] LLM-facing retrieval API
 
 ---
